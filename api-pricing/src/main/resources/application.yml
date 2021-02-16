@@ -1,0 +1,40 @@
+management:
+  health.db.enabled: false
+  endpoints:    
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+
+server:
+  port: 5080
+  servlet:
+    context-path: /api/flights/pricing
+
+jetty:
+  threadPool:
+    maxThreads: 10
+    minThreads: 10
+
+spring:
+  flyway:
+    locations: classpath:db/migration
+    sql-migration-prefix: V
+    repeatable-sql-migration-prefix: R
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql
+  datasource:
+    url: "jdbc:mysql://localhost:3306/flights_pricing?autoReconnect=true"
+    username: root
+    password: muppet
+    driverClassName: com.mysql.cj.jdbc.Driver
+    validation-query: select 1;
+    maxActive: 100
+  jpa:
+    show-sql: true
+    generate-ddl: true    
+    properties:    
+      hibernate:
+        ejb.naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy                
+        dialect: org.hibernate.dialect.MySQLDialect
+        hbm2ddl.auto: validate

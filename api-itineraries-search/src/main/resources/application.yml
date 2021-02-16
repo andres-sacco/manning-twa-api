@@ -1,0 +1,29 @@
+management:
+  health.db.enabled: false
+  endpoints:    
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+
+server:
+  port: 7080
+  servlet:
+    context-path: /api/flights/itineraries-search
+
+jetty:
+  threadPool:
+    maxThreads: 10
+    minThreads: 10
+    
+connector:  
+   provider-alpha:
+      host: localhost:8080
+      responseTimeout: 5000
+      connectionTimeout: 5000
+      readTimeout: 5000         
+   provider-beta:
+      host: localhost:9080
+      responseTimeout: 5000
+      connectionTimeout: 5000
+      readTimeout: 5000 

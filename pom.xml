@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.twa.flights</groupId>
+	<artifactId>api-flights</artifactId>
+	<version>1.0.0</version>
+	<name>api-flights</name>
+	<description>All the things common in all the projects</description>
+	<packaging>pom</packaging>
+
+	<developers>
+		<developer>
+			<email>sacco.andres@gmail.com</email>
+			<name>Andres Sacco</name>
+			<id>sacco.andres</id>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>api-catalog</module>
+		<module>api-clusters</module>
+		<module>api-itineraries-search</module>
+		<module>api-pricing</module>
+		<module>api-provider-alpha</module>
+		<module>api-provider-beta</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>bintray</id>
+			<url>https://dl.bintray.com/twa/repository</url>
+		</repository>
+	</repositories>
+</project>

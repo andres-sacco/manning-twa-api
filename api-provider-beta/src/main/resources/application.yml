@@ -1,0 +1,24 @@
+management:
+  health.db.enabled: false
+  endpoints:    
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+
+server:
+  port: 9080
+  servlet:
+    context-path: /api/flights/provider/beta
+
+jetty:
+  threadPool:
+    maxThreads: 10
+    minThreads: 10
+    
+connector:
+   catalog:
+      host: localhost:6080
+      responseTimeout: 1000
+      connectionTimeout: 1000
+      readTimeout: 1000

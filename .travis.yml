@@ -1,0 +1,13 @@
+dist: xenial
+language: java
+
+cache:
+  directories:
+    - "$HOME/.m2"
+    - "$HOME/.sonar"
+
+before_cache:
+  - rm -rf $HOME/.m2/repository/com/twa/flights
+
+jdk: 
+  - openjdk11

@@ -9,5 +9,8 @@ cache:
 before_cache:
   - rm -rf $HOME/.m2/repository/com/twa/flights
 
+script: 
+  - mvn clean verify
+
 jdk: 
   - openjdk11

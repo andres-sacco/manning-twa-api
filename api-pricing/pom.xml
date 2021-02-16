@@ -27,6 +27,7 @@
 
 	<properties>
 		<application.name>api-pricing</application.name>
+		<application.mainClass>com.twa.flights.api.pricing.App</application.mainClass>
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -178,6 +179,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
+				<configuration>
+					<mainClass>com.twa.flights.api.pricing.App</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -186,5 +197,5 @@
 			<id>bintray</id>
 			<url>https://dl.bintray.com/twa/repository</url>
 		</repository>
-	</repositories>	
+	</repositories>
 </project>

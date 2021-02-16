@@ -27,6 +27,7 @@
 
 	<properties>
 		<application.name>api-provider-alpha</application.name>
+		<application.mainClass>com.twa.flights.api.provider.alpha.App</application.mainClass>		
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -187,7 +188,37 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
+				<configuration>
+					<mainClass>com.twa.flights.api.provider.alpha.App</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-site</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>			
 		</plugins>
 	</build>
 	<repositories>
@@ -195,5 +226,5 @@
 			<id>bintray</id>
 			<url>https://dl.bintray.com/twa/repository</url>
 		</repository>
-	</repositories>	
+	</repositories>
 </project>

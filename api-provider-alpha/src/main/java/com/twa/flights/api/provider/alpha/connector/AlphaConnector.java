@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-import org.assertj.core.util.Lists;
 import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Faker;
+import com.google.common.collect.Lists;
 import com.twa.flights.common.dto.enums.FlightType;
 import com.twa.flights.common.dto.enums.PassengerType;
 import com.twa.flights.common.dto.enums.Provider;

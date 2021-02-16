@@ -1,0 +1,38 @@
+version: '3.0'
+services:
+  api-catalog:
+    build: api-catalog/.
+    container_name: api-catalog
+    ports:
+     - 6080:6080
+    restart: always 
+  api-clusters:
+    build: api-clusters/.
+    container_name: api-clusters
+    ports:
+     - 4080:4080
+    restart: always 
+  api-itineraries-search:
+    build: api-itineraries-search/.
+    container_name: api-itineraries-search
+    ports:
+     - 7080:7080
+    restart: always       
+  api-pricing:
+    build: api-pricing/.
+    container_name: api-pricing
+    ports:
+     - 5080:5080
+    restart: always 
+  api-provider-alpha:
+    build: api-provider-alpha/.
+    container_name: api-provider-alpha
+    ports:
+     - 8080:8080
+    restart: always 
+  api-provider-beta:
+    build: api-provider-beta/.
+    container_name: api-provider-beta
+    ports:
+     - 9080:9080
+    restart: always 

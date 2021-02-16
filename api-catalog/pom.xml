@@ -3,12 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>com.twa.flights.common</groupId>
 		<artifactId>flights-parent</artifactId>
 		<version>1.0.4</version>
-		<relativePath/>
+		<relativePath />
 	</parent>
 
 	<groupId>com.twa.flights</groupId>
@@ -27,6 +27,7 @@
 
 	<properties>
 		<application.name>api-catalog</application.name>
+		<application.mainClass>com.twa.flights.api.catalog.App</application.mainClass>
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -174,6 +175,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
+				<configuration>
+					<mainClass>com.twa.flights.api.catalog.App</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -182,5 +193,5 @@
 			<id>bintray</id>
 			<url>https://dl.bintray.com/twa/repository</url>
 		</repository>
-	</repositories>	
+	</repositories>
 </project>

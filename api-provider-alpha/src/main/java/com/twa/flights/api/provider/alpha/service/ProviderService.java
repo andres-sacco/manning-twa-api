@@ -2,12 +2,12 @@ package com.twa.flights.api.provider.alpha.service;
 
 import java.util.List;
 
-import org.assertj.core.util.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.collect.Lists;
 import com.twa.flights.api.provider.alpha.connector.AlphaConnector;
 import com.twa.flights.api.provider.alpha.helper.FlightHelper;
 import com.twa.flights.common.dto.itinerary.ItineraryDTO;

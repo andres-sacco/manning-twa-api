@@ -28,10 +28,4 @@
 		<module>api-provider-beta</module>
 	</modules>
 
-	<repositories>
-		<repository>
-			<id>bintray</id>
-			<url>https://dl.bintray.com/twa/repository</url>
-		</repository>
-	</repositories>
 </project>

@@ -1,5 +1,6 @@
 # Manning TWA - Optimizing Cost
 [![Build Status](https://travis-ci.com/andres-sacco/manning-twa-api.svg?branch=main)](https://travis-ci.com/andres-sacco/manning-twa-api) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This project contains all the code related with "Optimize costs in Microservices"
 
 ## Requirements
@@ -31,18 +32,11 @@ Most of the microservices uses a common model of classes, to prevent duplicate c
 
 The common model consists of the following group of classes/enums:
 
-##### Request
 * **AvailabilityRequestDTO** - This class contain all the parameters uses to do a search.
-
-##### Enums
 * **Provider** - This enum contain all the possible providers (Alpha, Beta).
 * **FlightType** - This enum contain all the possible types of flights (One-way, Return). 
 * **PassengerType** - This enum contain all the types of passengers.
-
-##### Itinerary
-* **ItineraryDTO** - 
-* **SegmentDTO** - 
-* **LegDTO** - 
+* **ItineraryDTO** & **SegmentDTO**  & **LegDTO** - These classes have all the common information about one group of flights. Also contain a reference to the price.
 * **PriceInfoDTO** - This class contain all the information about the price of all the type of passengers.
 * **PaxPriceDTO** - This class refer to the price of one type of passenger.
 * **MarkupDTO** - This class have all the information about the markup of one itinerary. 

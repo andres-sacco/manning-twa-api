@@ -19,16 +19,16 @@ jetty:
 connector:
    catalog:
       host: localhost:6080
-      responseTimeout: 1000
-      connectionTimeout: 1000
-      readTimeout: 1000
+      responseTimeout: 2000
+      connectionTimeout: 2000
+      readTimeout: 2000
    pricing:
       host: localhost:5080
-      responseTimeout: 5000
-      connectionTimeout: 5000
-      readTimeout: 5000   
+      responseTimeout: 10000
+      connectionTimeout: 10000
+      readTimeout: 10000   
    itineraries-search:
       host: localhost:7080
-      responseTimeout: 5000
-      connectionTimeout: 5000
-      readTimeout: 5000         
+      responseTimeout: 10000
+      connectionTimeout: 10000
+      readTimeout: 10000         

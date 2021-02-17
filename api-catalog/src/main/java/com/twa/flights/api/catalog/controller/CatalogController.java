@@ -27,7 +27,7 @@ public class CatalogController implements CatalogResources {
 
     @Override
     public ResponseEntity<CityDTO> getCityByCode(String code) {
-        LOGGER.debug("Obtain all the information about the city with code {}", code);
+        LOGGER.info("Obtain all the information about the city with code {}", code);
 
         CityDTO response = entityService.getCityByCode(code);
         return new ResponseEntity<>(response, HttpStatus.OK);

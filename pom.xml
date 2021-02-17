@@ -28,4 +28,10 @@
 		<module>api-provider-beta</module>
 	</modules>
 
+	<properties>
+		<sonar.projectKey>andres-sacco_manning-twa-api</sonar.projectKey>
+		<sonar.organization>adschosen-github</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
+
 </project>

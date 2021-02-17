@@ -7,9 +7,9 @@ management:
         include: "*"
 
 server:
-  port: 8080
+  port: 5080
   servlet:
-    context-path: /api/flights/catalog
+    context-path: /api/flights/pricing
 
 jetty:
   threadPool:
@@ -24,7 +24,7 @@ spring:
     sql-migration-separator: __
     sql-migration-suffixes: .sql
   datasource:
-    url: "jdbc:mysql://localhost:3306/flights_catalog?autoReconnect=true"
+    url: "jdbc:mysql://api-pricing-db:3306/flights_pricing?autoReconnect=true"
     username: root
     password: muppet
     driverClassName: com.mysql.cj.jdbc.Driver

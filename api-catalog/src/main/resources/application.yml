@@ -24,7 +24,7 @@ spring:
     sql-migration-separator: __
     sql-migration-suffixes: .sql
   datasource:
-    url: "jdbc:mysql://localhost:3306/flights_catalog?autoReconnect=true"
+    url: "jdbc:mysql://localhost:3310/flights_catalog?autoReconnect=true"
     username: root
     password: muppet
     driverClassName: com.mysql.cj.jdbc.Driver

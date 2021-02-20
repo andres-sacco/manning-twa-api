@@ -9,7 +9,6 @@ To use these microservices you need to have in your machine the following things
 - [Maven](https://maven.apache.org/)
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/)
-- [Mysql](https://dev.mysql.com/downloads/mysql/)
 
 ## Architecture
 The microservices are an abstraction of all the possible flow of the flight's team. These microservices only contain all endpoints related with do a search. 
@@ -45,10 +44,10 @@ The common model consists of the following group of classes/enums:
 ## Run the APIs
 In order to run API, please follow these steps:
 - Clone the repository using this command **git clone https://github.com/andres-sacco/manning-twa-api.git**
-- Open a terminal in the directory of the API and run **mvn clean install** , this command compile all the code and generate the jars. After do that, run **docker-compose up** and all the components run together.
+- Open a terminal in the directory of the API and run **mvn clean install** , this command compile all the code and generate the jars. After do that, run **docker-compose build** and  **docker-compose up** all the components run together.
 - If everything works fine, open a web browser in the URL which appears in the documentation section.
 
-Other option is open each project in the IDE (Eclipse, IntelliJ) and run it.
+Other option is open each project in the IDE (Eclipse, IntelliJ) and run it. Take in consideration that the repository have a file **docker-compose-infrastructure.yml** which have the containers to run the databases that **Catalog** and **Pricing** uses to obtain the information, so compile and run this file before run all the microservices in your IDE.
 
 ## Documentation of APIs
 Each API have documentation to understand which parameters are required and the URL to invoke it. To see the API documentation is necessary to run the each project and access to:

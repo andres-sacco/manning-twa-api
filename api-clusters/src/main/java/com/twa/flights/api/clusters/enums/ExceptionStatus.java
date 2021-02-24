@@ -19,7 +19,9 @@ public enum ExceptionStatus {
                                                                                             400_13,
                                                                                             "Some of the routes are duplicated"), INCOMPLETE_CATALOG_INFORMATION(
                                                                                                     400_14,
-                                                                                                    "The information about one of the city is not complete (code, country or continent is missing)");
+                                                                                                    "The information about one of the city is not complete (code, country or continent is missing)"), SEARCH_NOT_FOUND_IN_REPOSITORY(
+                                                                                                            400_15,
+                                                                                                            "The information about the search is not available");
 
     private final int code;
     private final String message;

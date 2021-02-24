@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.twa.flights.api.clusters.controller.documentation.ClustersResources;
 import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.clusters.dto.request.ClustersAvailabilityRequestDTO;
 import com.twa.flights.api.clusters.service.ClustersService;
 import com.twa.flights.api.clusters.validator.AvailabilityRequestValidator;
-import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
 @RestController
 @RequestMapping("/")
@@ -31,7 +31,7 @@ public class ClustersController implements ClustersResources {
     }
 
     @Override
-    public ResponseEntity<ClusterSearchDTO> availability(AvailabilityRequestDTO request) {
+    public ResponseEntity<ClusterSearchDTO> availability(ClustersAvailabilityRequestDTO request) {
         LOGGER.debug("Obtain all the itineraries with price");
         requestValidator.validate(request);
 

@@ -16,7 +16,7 @@ The microservices are an abstraction of all the possible flow of the flight's te
 #### Microservices
 The system consists of the following microserices:
 
-* **api-catalog** - a microservice contaning all information about which are the valid cities to find flights. This API only returns a certain amount of flights that are required in the request, to obtain the next page of results without doing a new search all the results will save it in a database with a TTL. Take into consideration that the logic to obtain the next page of the results is out of the scope of this example.
+* **api-catalog** - a microservice contaning all information about which are the valid cities to find flights. This API only returns a certain amount of flights that are required in the request, to obtain the next page of results without doing a new search all the results will save it in a database with a TTL. 
 * **api-clusters** - a microservice contaning all the validations about the parameters of the search. Also call to **api-pricing** to obtain the final price of each itinerary.
 * **api-pricing** - a microservice contaning all the rules to add markup of each itinerary and calculate the final price of each of them.
 * **api-itineraries-search** - a microservices contaning all logic of which provider need to call to obtain all the possible itineraries. Also this microservice remove the possible duplicates.

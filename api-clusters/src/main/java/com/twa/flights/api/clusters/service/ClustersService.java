@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.clusters.repository.ClustersRepository;
 import com.twa.flights.common.dto.itinerary.ItineraryDTO;
 import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
@@ -18,24 +20,31 @@ public class ClustersService {
 
     private final ItinerariesSearchService itinerariesSearchService;
     private final PricingService pricingService;
+    private final ClustersRepository repository;
 
     @Autowired
-    public ClustersService(ItinerariesSearchService itinerariesSearchService, PricingService pricingService) {
+    public ClustersService(ItinerariesSearchService itinerariesSearchService, PricingService pricingService,
+            ClustersRepository repository) {
         this.itinerariesSearchService = itinerariesSearchService;
         this.pricingService = pricingService;
+        this.repository = repository;
     }
 
-    public List<ItineraryDTO> availability(AvailabilityRequestDTO request) {
+    public ClusterSearchDTO availability(AvailabilityRequestDTO request) {
         LOGGER.debug("begin the search");
 
         List<ItineraryDTO> itineraries = itinerariesSearchService.availability(request);
 
         itineraries = pricingService.priceItineraries(itineraries);
+        itineraries = itineraries.stream().sorted((itineraryOne, itineraryTwo) -> itineraryOne.getPriceInfo()
+                .getTotalAmount().compareTo(itineraryTwo.getPriceInfo().getTotalAmount())).collect(Collectors.toList());
 
-        return itineraries.stream()
-                .sorted((itineraryOne, itineraryTwo) -> itineraryOne.getPriceInfo().getTotalAmount()
-                        .compareTo(itineraryTwo.getPriceInfo().getTotalAmount()))
-                .limit(request.getAmount()).collect(Collectors.toList());
+        ClusterSearchDTO response = repository.insert(request, itineraries);
+
+        // Limit the size
+        response.setItineraries(itineraries.stream().limit(request.getAmount()).collect(Collectors.toList()));
+
+        return response;
     }
 
 }

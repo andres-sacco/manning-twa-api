@@ -1,13 +1,11 @@
 package com.twa.flights.api.clusters.controller.documentation;
 
-import java.util.List;
-
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.twa.flights.common.dto.itinerary.ItineraryDTO;
+import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,6 +32,6 @@ public interface ClustersResources {
 
     })
     @GetMapping(value = "/itineraries")
-    ResponseEntity<List<ItineraryDTO>> availability(@ParameterObject AvailabilityRequestDTO availabilityRequest);
+    ResponseEntity<ClusterSearchDTO> availability(@ParameterObject AvailabilityRequestDTO availabilityRequest);
 
 }

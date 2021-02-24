@@ -16,6 +16,10 @@ jetty:
     maxThreads: 10
     minThreads: 10
     
+redis:
+   host: localhost
+   port: 6379
+    
 connector:
    catalog:
       host: localhost:6080

@@ -1,7 +1,5 @@
 package com.twa.flights.api.clusters.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.twa.flights.api.clusters.controller.documentation.ClustersResources;
+import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 import com.twa.flights.api.clusters.service.ClustersService;
 import com.twa.flights.api.clusters.validator.AvailabilityRequestValidator;
-import com.twa.flights.common.dto.itinerary.ItineraryDTO;
 import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
 @RestController
@@ -33,11 +31,11 @@ public class ClustersController implements ClustersResources {
     }
 
     @Override
-    public ResponseEntity<List<ItineraryDTO>> availability(AvailabilityRequestDTO request) {
+    public ResponseEntity<ClusterSearchDTO> availability(AvailabilityRequestDTO request) {
         LOGGER.debug("Obtain all the itineraries with price");
         requestValidator.validate(request);
 
-        List<ItineraryDTO> response = clustersService.availability(request);
+        ClusterSearchDTO response = clustersService.availability(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

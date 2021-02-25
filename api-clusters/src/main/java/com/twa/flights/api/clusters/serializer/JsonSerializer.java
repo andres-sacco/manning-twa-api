@@ -11,12 +11,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-public class JsonGzipSerializer {
+public class JsonSerializer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonGzipSerializer.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonSerializer.class);
     private static final ObjectMapper OBJECT_MAPPER;
 
-    private JsonGzipSerializer() {
+    private JsonSerializer() {
         // just to avoid create instances
     }
 

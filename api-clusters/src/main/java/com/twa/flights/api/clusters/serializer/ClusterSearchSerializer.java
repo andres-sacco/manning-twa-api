@@ -11,11 +11,11 @@ public class ClusterSearchSerializer implements RedisSerializer<ClusterSearchDTO
 
     @Override
     public byte[] serialize(ClusterSearchDTO clusterSearch) {
-        return JsonGzipSerializer.serialize(clusterSearch);
+        return JsonSerializer.serialize(clusterSearch);
     }
 
     @Override
     public ClusterSearchDTO deserialize(byte[] bytes) {
-        return JsonGzipSerializer.deserialize(bytes, ClusterSearchDTO.class);
+        return JsonSerializer.deserialize(bytes, ClusterSearchDTO.class);
     }
 }

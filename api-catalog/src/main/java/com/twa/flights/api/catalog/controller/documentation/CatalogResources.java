@@ -24,7 +24,7 @@ public interface CatalogResources {
             @ApiResponse(responseCode = "404", description = "Entity not found"),
             @ApiResponse(responseCode = "500", description = "Internal server error") }, tags = {
                     "Catalog" }, parameters = {
-                            @Parameter(in = ParameterIn.PATH, name = "code", description = "The code of the city", required = true) })
+                            @Parameter(in = ParameterIn.PATH, name = "code", description = "The code of the city (e.g. BUE, MIA, SCL, NYC, PAR, LON)", required = true, example = "BUE")})
     @GetMapping(value = "/city/{code}")
     ResponseEntity<CityDTO> getCityByCode(@PathVariable String code);
 

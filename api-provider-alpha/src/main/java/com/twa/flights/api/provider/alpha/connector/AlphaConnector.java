@@ -41,7 +41,7 @@ public class AlphaConnector {
         String[] departure = availabilityRequest.getTo().split(",");
 
         itinerary.setCarrier(carriers.get(faker.number().numberBetween(0, 3)));
-        itinerary.setProvider(Provider.BETA);
+        itinerary.setProvider(Provider.ALPHA);
 
         if (departure.length > 1) {
             itinerary.setFlightType(FlightType.ROUND_TRIP);

@@ -4,7 +4,7 @@ services:
     build: api-catalog/.
     container_name: api-catalog
     ports:
-     - 6080:6080
+     - 6070:6070
     restart: always 
     links:
       - api-catalog-db 
@@ -23,21 +23,21 @@ services:
     build: api-clusters/.
     container_name: api-clusters
     ports:
-     - 4080:4080
+     - 4070:4070
     restart: always
       
   api-itineraries-search:
     build: api-itineraries-search/.
     container_name: api-itineraries-search
     ports:
-     - 7080:7080
+     - 7070:7070
     restart: always   
 
   api-pricing:
     build: api-pricing/.
     container_name: api-pricing
     ports:
-     - 5080:5080
+     - 5070:5070
     restart: always 
  
   api-pricing-db:
@@ -54,12 +54,12 @@ services:
     build: api-provider-alpha/.
     container_name: api-provider-alpha
     ports:
-     - 8080:8080
+     - 8070:8070
     restart: always 
     
   api-provider-beta:
     build: api-provider-beta/.
     container_name: api-provider-beta
     ports:
-     - 9080:9080
+     - 9070:9070
     restart: always      

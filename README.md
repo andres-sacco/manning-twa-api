@@ -51,9 +51,11 @@ Other option is open each project in the IDE (Eclipse, IntelliJ) and run it. Tak
 
 ## Documentation of APIs
 Each API have documentation to understand which parameters are required and the URL to invoke it. To see the API documentation is necessary to run the each project and access to:
-- [Swagger - Clusters](http://localhost:4080/api/flights/clusters/documentation)
-- [Swagger - Pricing](http://localhost:5080/api/flights/pricing/documentation)
-- [Swagger - Catalog](http://localhost:6080/api/flights/catalog/documentation)
-- [Swagger - Itineraries Search](http://localhost:7080/api/flights/itineraries-search/documentation)
-- [Swagger - Provider Alpha](http://localhost:8080/api/flights/provider/alpha/documentation)
-- [Swagger - Provider Beta](http://localhost:9080/api/flights/provider/beta/documentation)
+- [Swagger - Clusters](http://localhost:4070/api/flights/clusters/documentation)
+- [Swagger - Pricing](http://localhost:5070/api/flights/pricing/documentation)
+- [Swagger - Catalog](http://localhost:6070/api/flights/catalog/documentation)
+- [Swagger - Itineraries Search](http://localhost:7070/api/flights/itineraries-search/documentation)
+- [Swagger - Provider Alpha](http://localhost:8070/api/flights/provider/alpha/documentation)
+- [Swagger - Provider Beta](http://localhost:9070/api/flights/provider/beta/documentation)
+
+Optionally you can use **Postman** or **Insomia** to do the request from the different microservices, the repository include a collection of each tool with all the endpoints.

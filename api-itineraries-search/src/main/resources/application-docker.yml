@@ -7,7 +7,7 @@ management:
         include: "*"
 
 server:
-  port: 7080
+  port: 7070
   servlet:
     context-path: /api/flights/itineraries-search
 
@@ -18,12 +18,12 @@ jetty:
     
 connector:  
    provider-alpha:
-      host: api-provider-alpha:8080
+      host: api-provider-alpha:8070
       responseTimeout: 5000
       connectionTimeout: 5000
       readTimeout: 5000         
    provider-beta:
-      host: api-provider-beta:9080
+      host: api-provider-beta:9070
       responseTimeout: 5000
       connectionTimeout: 5000
       readTimeout: 5000 

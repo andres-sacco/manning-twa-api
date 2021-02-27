@@ -7,7 +7,7 @@ management:
         include: "*"
 
 server:
-  port: 8080
+  port: 8070
   servlet:
     context-path: /api/flights/provider/alpha
 
@@ -18,7 +18,7 @@ jetty:
     
 connector:
    catalog:
-      host: localhost:6080
+      host: localhost:6070
       responseTimeout: 1000
       connectionTimeout: 1000
       readTimeout: 1000

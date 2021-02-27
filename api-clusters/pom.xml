@@ -33,6 +33,7 @@
 		<spring-boot.version>2.4.2</spring-boot.version>
 
 		<!-- General -->
+		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
 		<springdoc-openapi-ui.version>1.5.3</springdoc-openapi-ui.version>
 		<guava.version>30.1-jre</guava.version>
@@ -97,6 +98,12 @@
 		</dependency>
 
 		<!-- General -->
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>chaos-monkey-spring-boot</artifactId>
+		    <version>${chaos-monkey-spring-boot.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>

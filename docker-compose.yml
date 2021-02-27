@@ -25,6 +25,15 @@ services:
     ports:
      - 4070:4070
     restart: always
+    links:
+      - api-clusters-db 
+
+  api-clusters-db:
+    container_name: api-clusters-db
+    image: redis:alpine
+    restart: always
+    ports:
+     - 6379:6379       
       
   api-itineraries-search:
     build: api-itineraries-search/.

@@ -1,14 +1,12 @@
 package com.twa.flights.api.clusters.controller.documentation;
 
-import java.util.List;
-
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.twa.flights.common.dto.itinerary.ItineraryDTO;
-import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
+import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.clusters.dto.request.ClustersAvailabilityRequestDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -22,7 +20,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public interface ClustersResources {
 
     @Operation(description = "Get flights availability", responses = {
-            @ApiResponse(responseCode = "200", description = "The itineraries with the conditions of search", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = AvailabilityRequestDTO.class))) }, tags = {
+            @ApiResponse(responseCode = "200", description = "The itineraries with the conditions of search", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ClustersAvailabilityRequestDTO.class))) }, tags = {
                     "Clusters" }, parameters = {
                             @Parameter(in = ParameterIn.QUERY, name = "from", description = "Every segment's origin comma separated. (e.g. BUE,MIA)", required = true, example = "BUE,MIA"),
                             @Parameter(in = ParameterIn.QUERY, name = "to", description = "Every segment's destination comma separated. (e.g. BUE,MIA)", required = true, example = "MIA,BUE"),
@@ -34,6 +32,6 @@ public interface ClustersResources {
 
     })
     @GetMapping(value = "/itineraries")
-    ResponseEntity<List<ItineraryDTO>> availability(@ParameterObject AvailabilityRequestDTO availabilityRequest);
+    ResponseEntity<ClusterSearchDTO> availability(@ParameterObject ClustersAvailabilityRequestDTO availabilityRequest);
 
 }

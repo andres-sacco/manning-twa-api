@@ -30,7 +30,11 @@ chaos:
 spring:
   profiles:
     active: default
-
+    
+redis:
+   host: localhost
+   port: 6379
+    
 connector:
    catalog:
       host: localhost:6080

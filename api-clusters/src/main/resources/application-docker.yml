@@ -30,7 +30,11 @@ chaos:
 spring:
   profiles:
     active: default
-       
+         
+redis:
+   host: api-clusters-db
+   port: 6379    
+
 connector:
    catalog:
       host: api-catalog:6070

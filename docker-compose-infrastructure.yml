@@ -11,6 +11,13 @@ services:
       MYSQL_ROOT_PASSWORD: 'muppet'
     ports:
      - 3310:3306
+
+  api-clusters-db:
+    container_name: api-clusters-db
+    image: redis:alpine
+    restart: always
+    ports:
+     - 6379:6379   
      
   api-pricing-db:
     container_name: api-pricing-db

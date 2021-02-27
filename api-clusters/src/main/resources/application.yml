@@ -33,21 +33,21 @@ spring:
     
 redis:
    host: localhost
-   port: 6379
+   port: 6079
     
 connector:
    catalog:
-      host: localhost:6080
+      host: localhost:6070
       responseTimeout: 2000
       connectionTimeout: 2000
       readTimeout: 2000
    pricing:
-      host: localhost:5080
+      host: localhost:5070
       responseTimeout: 10000
       connectionTimeout: 10000
       readTimeout: 10000   
    itineraries-search:
-      host: localhost:7080
+      host: localhost:7070
       responseTimeout: 10000
       connectionTimeout: 10000
       readTimeout: 10000         

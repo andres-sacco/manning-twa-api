@@ -48,41 +48,40 @@ public class ClustersService {
         return response;
     }
 
-	private ClusterSearchDTO availabilityFromProviders(ClustersAvailabilityRequestDTO request) {
-		ClusterSearchDTO response;
-		List<ItineraryDTO> itineraries = itinerariesSearchService.availability(request);
+    private ClusterSearchDTO availabilityFromProviders(ClustersAvailabilityRequestDTO request) {
+        ClusterSearchDTO response;
+        List<ItineraryDTO> itineraries = itinerariesSearchService.availability(request);
 
-		itineraries = pricingService.priceItineraries(itineraries);
-		itineraries = itineraries.stream().sorted((itineraryOne, itineraryTwo) -> itineraryOne.getPriceInfo()
-		        .getTotalAmount().compareTo(itineraryTwo.getPriceInfo().getTotalAmount()))
-		        .collect(Collectors.toList());
+        itineraries = pricingService.priceItineraries(itineraries);
+        itineraries = itineraries.stream().sorted((itineraryOne, itineraryTwo) -> itineraryOne.getPriceInfo()
+                .getTotalAmount().compareTo(itineraryTwo.getPriceInfo().getTotalAmount())).collect(Collectors.toList());
 
-		response = repository.insert(request, itineraries);
+        response = repository.insert(request, itineraries);
 
-		// Limit the size
-		response.setItineraries(itineraries.stream().limit(request.getAmount()).collect(Collectors.toList()));
-		return response;
-	}
+        // Limit the size
+        response.setItineraries(itineraries.stream().limit(request.getAmount()).collect(Collectors.toList()));
+        return response;
+    }
 
-	private ClusterSearchDTO availabilityFromDatabase(ClustersAvailabilityRequestDTO request) {
-		ClusterSearchDTO response;
-		response = repository.get(request.getId());
+    private ClusterSearchDTO availabilityFromDatabase(ClustersAvailabilityRequestDTO request) {
+        ClusterSearchDTO response;
+        response = repository.get(request.getId());
 
-		if (response == null) {
-		    throw new APIException(HttpStatus.BAD_GATEWAY, ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
-		            ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getMessage());
-		}
+        if (response == null) {
+            throw new APIException(HttpStatus.BAD_GATEWAY, ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
+                    ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getMessage());
+        }
 
-		response.getPagination().setOffset(request.getOffset()); //Update offset
-		
-		List<ItineraryDTO> itineraries = response.getItineraries();
+        response.getPagination().setOffset(request.getOffset()); // Update offset
 
-		long skip = request.getOffset().longValue() * request.getAmount();
+        List<ItineraryDTO> itineraries = response.getItineraries();
 
-		// Limit the size
-		response.setItineraries(
-		        itineraries.stream().skip(skip).limit(request.getAmount()).collect(Collectors.toList()));
-		return response;
-	}
+        long skip = request.getOffset().longValue() * request.getAmount();
+
+        // Limit the size
+        response.setItineraries(
+                itineraries.stream().skip(skip).limit(request.getAmount()).collect(Collectors.toList()));
+        return response;
+    }
 
 }

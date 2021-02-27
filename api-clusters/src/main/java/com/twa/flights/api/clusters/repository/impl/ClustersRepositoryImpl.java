@@ -23,56 +23,56 @@ import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 @Repository
 public class ClustersRepositoryImpl implements ClustersRepository {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ClustersRepositoryImpl.class);
-	private static final long TOKEN_TTL = 5 * 60 * 1000L; // 5 Minutes
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClustersRepositoryImpl.class);
+    private static final long TOKEN_TTL = 5 * 60 * 1000L; // 5 Minutes
 
-	private final ValueOperations<String, ClusterSearchDTO> valueOperations;
-	private final RedisTemplate<String, ClusterSearchDTO> redisTemplate;
-	private final ExecutorService executorService;
-	private final FlightIdGeneratorHelper flightIdGeneratorHelper;
+    private final ValueOperations<String, ClusterSearchDTO> valueOperations;
+    private final RedisTemplate<String, ClusterSearchDTO> redisTemplate;
+    private final ExecutorService executorService;
+    private final FlightIdGeneratorHelper flightIdGeneratorHelper;
 
-	@Autowired
-	public ClustersRepositoryImpl(RedisTemplate<String, ClusterSearchDTO> redisTemplate,
-			FlightIdGeneratorHelper flightIdGeneratorHelper) {
-		this.flightIdGeneratorHelper = flightIdGeneratorHelper;
-		this.executorService = Executors.newFixedThreadPool(10);
-		this.redisTemplate = redisTemplate;
-		this.valueOperations = redisTemplate.opsForValue();
-	}
+    @Autowired
+    public ClustersRepositoryImpl(RedisTemplate<String, ClusterSearchDTO> redisTemplate,
+            FlightIdGeneratorHelper flightIdGeneratorHelper) {
+        this.flightIdGeneratorHelper = flightIdGeneratorHelper;
+        this.executorService = Executors.newFixedThreadPool(10);
+        this.redisTemplate = redisTemplate;
+        this.valueOperations = redisTemplate.opsForValue();
+    }
 
-	@Override
-	public ClusterSearchDTO insert(AvailabilityRequestDTO availabilityRequest, List<ItineraryDTO> itineraries) {
-		LOGGER.debug("Insert all the information in the database");
+    @Override
+    public ClusterSearchDTO insert(AvailabilityRequestDTO availabilityRequest, List<ItineraryDTO> itineraries) {
+        LOGGER.debug("Insert all the information in the database");
 
-		PaginationDTO pagination = new PaginationDTO(0, availabilityRequest.getAmount(), itineraries.size());
-		ClusterSearchDTO dataToInsert = new ClusterSearchDTO(flightIdGeneratorHelper.generate(availabilityRequest),
-				itineraries, pagination);
+        PaginationDTO pagination = new PaginationDTO(0, availabilityRequest.getAmount(), itineraries.size());
+        ClusterSearchDTO dataToInsert = new ClusterSearchDTO(flightIdGeneratorHelper.generate(availabilityRequest),
+                itineraries, pagination);
 
-		executorService.submit(() -> {
-			redisTemplate.execute((RedisCallback<Object>) connection -> {
-				@SuppressWarnings("unchecked")
-				RedisSerializer<String> keySerializer = (RedisSerializer<String>) redisTemplate.getKeySerializer();
-				@SuppressWarnings("unchecked")
-				RedisSerializer<ClusterSearchDTO> valueSerializer = (RedisSerializer<ClusterSearchDTO>) redisTemplate
-						.getValueSerializer();
+        executorService.submit(() -> {
+            redisTemplate.execute((RedisCallback<Object>) connection -> {
+                @SuppressWarnings("unchecked")
+                RedisSerializer<String> keySerializer = (RedisSerializer<String>) redisTemplate.getKeySerializer();
+                @SuppressWarnings("unchecked")
+                RedisSerializer<ClusterSearchDTO> valueSerializer = (RedisSerializer<ClusterSearchDTO>) redisTemplate
+                        .getValueSerializer();
 
-				connection.pSetEx(keySerializer.serialize(dataToInsert.getId()), TOKEN_TTL,
-						valueSerializer.serialize(dataToInsert));
-				return null;
-			});
-		});
-		return new ClusterSearchDTO(dataToInsert.getId(), itineraries, pagination);
-	}
+                connection.pSetEx(keySerializer.serialize(dataToInsert.getId()), TOKEN_TTL,
+                        valueSerializer.serialize(dataToInsert));
+                return null;
+            });
+        });
+        return new ClusterSearchDTO(dataToInsert.getId(), itineraries, pagination);
+    }
 
-	@Override
-	public ClusterSearchDTO get(String id) {
+    @Override
+    public ClusterSearchDTO get(String id) {
 
-		ClusterSearchDTO clusterSearch = valueOperations.get(id);
-		if (clusterSearch == null) {
-			LOGGER.error("clusterSearch information with id: {}' not found in repository", id);
-		}
+        ClusterSearchDTO clusterSearch = valueOperations.get(id);
+        if (clusterSearch == null) {
+            LOGGER.error("clusterSearch information with id: {}' not found in repository", id);
+        }
 
-		return clusterSearch;
-	}
+        return clusterSearch;
+    }
 
 }

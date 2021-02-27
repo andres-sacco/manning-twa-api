@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 
-
 @Service
 public class ClusterSearchSerializer implements RedisSerializer<ClusterSearchDTO> {
 

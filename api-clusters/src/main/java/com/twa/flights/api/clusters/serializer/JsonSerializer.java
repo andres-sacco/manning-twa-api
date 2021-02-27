@@ -21,17 +21,15 @@ public class JsonSerializer {
     }
 
     static {
-        OBJECT_MAPPER = new ObjectMapper()
-                .configure(MapperFeature.USE_GETTERS_AS_SETTERS, false)
+        OBJECT_MAPPER = new ObjectMapper().configure(MapperFeature.USE_GETTERS_AS_SETTERS, false)
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                .setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
-                .registerModule(new JavaTimeModule());
+                .setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE).registerModule(new JavaTimeModule());
     }
 
     public static byte[] serialize(Object object) {
         byte[] compressedJson = null;
         try {
-        	compressedJson = OBJECT_MAPPER.writeValueAsString(object).getBytes();
+            compressedJson = OBJECT_MAPPER.writeValueAsString(object).getBytes();
         } catch (IOException e) {
             LOGGER.error("Error serializing object: {}", e.getMessage());
         }

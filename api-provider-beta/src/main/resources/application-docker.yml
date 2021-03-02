@@ -24,8 +24,8 @@ chaos:
     assaults:
       exceptionsActive: true
       latencyActive: true   
-      latencyRangeStart: 10
-      latencyRangeEnd: 5000  
+      latencyRangeStart: 3000
+      latencyRangeEnd: 10000 
       
 spring:
   profiles:

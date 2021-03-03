@@ -81,6 +81,8 @@ Each API have documentation to understand which parameters are required and the 
 - [Swagger - Provider Alpha](http://localhost:8070/api/flights/provider/alpha/documentation)
 - [Swagger - Provider Beta](http://localhost:9070/api/flights/provider/beta/documentation)
 
+**Note:** Take into consideration that all the API have to GET methods except API-Pricing because this API needs to receive a list of Itineraries so it's not possible to use a GET method. 
+
 Optionally you can use [**Postman**](https://www.postman.com/) or [**Insomia**](https://insomnia.rest/) to do the request from the different microservices, the repository include a collection of each tool with all the endpoints.
 
 ## Considerations

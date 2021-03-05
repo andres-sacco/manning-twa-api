@@ -29,7 +29,7 @@ chaos:
       
 spring:
   profiles:
-    active: default
+    active: chaos-monkey
   flyway:
     locations: classpath:db/migration
     sql-migration-prefix: V

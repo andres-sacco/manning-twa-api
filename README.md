@@ -10,6 +10,7 @@ The following are the most important topics in this file:
   - [Microservices](#Microservices)
   - [Model](#Model)
   - [Flow](#Flow)
+  - [Technologies](#Technologies)
 - [Run the APIs](#run-the-apis)
 - [Documentation of APIs](#documentation-of-apis)
 - [Considerations](#Considerations)
@@ -63,6 +64,14 @@ The flow of each request to do a search have the following steps:
 
 The following picture illustrates the flow described above.
 ![Flow](.images/Microservices-Flow.png)
+
+#### Technologies
+The microservices use some frameworks/libraries:
+- **spring-boot** is a common framework to develop Java application in an easy way because most of the things have a simple configuration.
+- **springdoc-openapi** is a implementation of the standard of Open Api 3.
+- **chaos-monkey-spring-boot** is a library which simulate random problems in the microservices following the principles of **Chaos Engineering** like latency, exceptions.
+- **orika** is a library which help to map the values from one object to another.
+- **snakeyaml** is a library to use YML files as a resources.
 
 ## Run the APIs
 In order to run API, please follow these steps:

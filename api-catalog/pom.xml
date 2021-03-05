@@ -35,7 +35,7 @@
 		<!-- General -->
 		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
-		<springdoc-openapi-ui.version>1.5.3</springdoc-openapi-ui.version>
+		<springdoc-openapi-ui.version>1.5.4</springdoc-openapi-ui.version>
 		<guava.version>30.1-jre</guava.version>
 
 		<!-- Maven plugins -->
@@ -159,12 +159,6 @@
 					<artifactId>asm</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>de.flapdoodle.embed</groupId>
-			<artifactId>de.flapdoodle.embed.mongo</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

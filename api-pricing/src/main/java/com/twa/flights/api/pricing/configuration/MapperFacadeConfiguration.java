@@ -9,13 +9,10 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 
 @Configuration
 public class MapperFacadeConfiguration {
-
-    private MapperFactory mapperFactory;
-
+	
     @Bean
     public MapperFacade mapperFacade() {
-        mapperFactory = new DefaultMapperFactory.Builder().build();
-
+    	MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
         return mapperFactory.getMapperFacade();
     }
 }

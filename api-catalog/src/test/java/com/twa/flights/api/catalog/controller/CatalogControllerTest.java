@@ -18,27 +18,26 @@ import com.twa.flights.api.catalog.service.CityService;
 @ExtendWith(MockitoExtension.class)
 public class CatalogControllerTest {
 
-	private static final String DEFAULT_CITY_CODE = "BUE";
+    private static final String DEFAULT_CITY_CODE = "BUE";
 
-	private CityService entityService;
-	private CatalogController controller;
+    private CityService entityService;
+    private CatalogController controller;
 
-	@BeforeEach
-	public void setUp() {
-		entityService = mock(CityService.class);
-		controller = new CatalogController(entityService);
-	}
+    @BeforeEach
+    public void setUp() {
+        entityService = mock(CityService.class);
+        controller = new CatalogController(entityService);
+    }
 
-	@Test
-	public void should_return_an_city() {
-		CityDTO city = new CityDTO();
-		city.setCode(DEFAULT_CITY_CODE);
+    @Test
+    public void should_return_an_city() {
+        CityDTO city = new CityDTO();
+        city.setCode(DEFAULT_CITY_CODE);
 
-		when(entityService.getCityByCode(DEFAULT_CITY_CODE)).thenReturn(city);
-		ResponseEntity<CityDTO> response = controller.getCityByCode(DEFAULT_CITY_CODE);
+        when(entityService.getCityByCode(DEFAULT_CITY_CODE)).thenReturn(city);
+        ResponseEntity<CityDTO> response = controller.getCityByCode(DEFAULT_CITY_CODE);
 
-		assertAll(() -> assertNotNull(response), 
-				() -> assertEquals(200, response.getStatusCodeValue()),
-				() -> assertEquals(DEFAULT_CITY_CODE, response.getBody().getCode()));
-	}
+        assertAll(() -> assertNotNull(response), () -> assertEquals(200, response.getStatusCodeValue()),
+                () -> assertEquals(DEFAULT_CITY_CODE, response.getBody().getCode()));
+    }
 }

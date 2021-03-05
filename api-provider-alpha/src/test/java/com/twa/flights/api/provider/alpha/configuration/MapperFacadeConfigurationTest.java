@@ -8,7 +8,7 @@ public class MapperFacadeConfigurationTest {
 
     @Test
     public void should_return_not_null_mapper_facade() {
-    	MapperFacadeConfiguration mapperConfiguration = new MapperFacadeConfiguration();
+        MapperFacadeConfiguration mapperConfiguration = new MapperFacadeConfiguration();
         assertNotNull(mapperConfiguration.mapperFacade());
     }
 }

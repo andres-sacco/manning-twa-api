@@ -29,7 +29,7 @@ chaos:
       
 spring:
   profiles:
-    active: monkey
+    active: chaos-monkey
     
 connector:
    catalog:

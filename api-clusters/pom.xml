@@ -194,9 +194,15 @@
 		</plugins>
 	</build>
 	<repositories>
+	    <repository>
+	        <id>central</id>
+	        <name>a0lx370ow2mnw-artifactory-primary-0-releases</name>
+	        <url>https://manning.jfrog.io/artifactory/manning-twa</url>
+	    </repository>
 		<repository>
-			<id>bintray</id>
-			<url>https://dl.bintray.com/twa/repository</url>
-		</repository>
+			<id>maven2</id>
+			<name>maven2</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository> 
 	</repositories>
 </project>

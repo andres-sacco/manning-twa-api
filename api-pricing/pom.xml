@@ -33,13 +33,13 @@
 		<spring-boot.version>2.4.2</spring-boot.version>
 
 		<!-- General -->
-		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
+		<chaos-monkey-spring-boot.version>2.3.2</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
 		<springdoc-openapi-ui.version>1.5.4</springdoc-openapi-ui.version>
 		<guava.version>30.1-jre</guava.version>
 		
 		<!-- TWA -->
-		<flights-common-dto.version>1.0.2</flights-common-dto.version>
+		<flights-common-dto.version>1.0.4</flights-common-dto.version>
 
 		<!-- Maven plugins -->
 		<spring-boot-maven-plugin.version>2.4.2</spring-boot-maven-plugin.version>
@@ -201,8 +201,14 @@
 	</build>
 	<repositories>
 		<repository>
-			<id>bintray</id>
-			<url>https://dl.bintray.com/twa/repository</url>
+			<id>maven2</id>
+			<name>maven2</name>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
+	    <repository>
+	        <id>central</id>
+	        <name>a0lx370ow2mnw-artifactory-primary-0-releases</name>
+	        <url>https://manning.jfrog.io/artifactory/manning-twa</url>
+	    </repository>
 	</repositories>
 </project>

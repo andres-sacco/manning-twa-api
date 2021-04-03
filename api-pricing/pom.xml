@@ -35,7 +35,7 @@
 		<!-- General -->
 		<chaos-monkey-spring-boot.version>2.3.2</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
-		<springdoc-openapi-ui.version>1.5.4</springdoc-openapi-ui.version>
+		<springdoc-openapi-ui.version>1.5.5</springdoc-openapi-ui.version>
 		<guava.version>30.1-jre</guava.version>
 		
 		<!-- TWA -->

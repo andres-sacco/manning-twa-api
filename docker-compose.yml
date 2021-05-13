@@ -15,8 +15,6 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'flights_catalog'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'muppet'
       MYSQL_ROOT_PASSWORD: 'muppet'
       
   api-clusters:
@@ -53,8 +51,6 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'flights_pricing'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'muppet'
       MYSQL_ROOT_PASSWORD: 'muppet'   
         
   api-provider-alpha:

@@ -27,7 +27,7 @@
 
 	<properties>
 		<application.name>api-catalog</application.name>
-		<application.mainClass>com.twa.flights.api.catalog.App</application.mainClass>
+		<application.mainClass>com.twa.flights.api.catalog.CatalogApp</application.mainClass>
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -37,6 +37,7 @@
 		<orika-core.version>1.5.4</orika-core.version>
 		<springdoc-openapi-ui.version>1.5.8</springdoc-openapi-ui.version>
 		<guava.version>30.1.1-jre</guava.version>
+		<caffeine.version>3.0.2</caffeine.version>
 
 		<!-- Maven plugins -->
 		<spring-boot-maven-plugin.version>2.4.2</spring-boot-maven-plugin.version>
@@ -91,6 +92,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
 		<!-- General -->
@@ -177,7 +183,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
 				<configuration>
-					<mainClass>com.twa.flights.api.catalog.App</mainClass>
+					<mainClass>com.twa.flights.api.catalog.CatalogApp</mainClass>
 				</configuration>
 				<executions>
 					<execution>

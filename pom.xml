@@ -11,13 +11,14 @@
 	<description>All the things common in all the projects</description>
 	<packaging>pom</packaging>
 
-	<developers>
-		<developer>
-			<email>sacco.andres@gmail.com</email>
-			<name>Andres Sacco</name>
-			<id>sacco.andres</id>
-		</developer>
-	</developers>
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 	<modules>
 		<module>api-catalog</module>

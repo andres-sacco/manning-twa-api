@@ -27,7 +27,7 @@
 
 	<properties>
 		<application.name>api-provider-alpha</application.name>
-		<application.mainClass>com.twa.flights.api.provider.alpha.App</application.mainClass>		
+		<application.mainClass>com.twa.flights.api.provider.alpha.ApiProviderAlphaApp</application.mainClass>
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -98,6 +98,12 @@
 			<artifactId>spring-tx</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+
 		<!-- General -->
 		<dependency>
 		    <groupId>de.codecentric</groupId>
@@ -127,6 +133,18 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.checkerframework</groupId>
+					<artifactId>checker-qual</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.google.errorprone</groupId>
+					<artifactId>error_prone_annotations</artifactId>
+				</exclusion>
+			</exclusions>
+
 		</dependency>
 
 		<dependency>
@@ -149,6 +167,12 @@
 			<groupId>ma.glasnost.orika</groupId>
 			<artifactId>orika-core</artifactId>
 			<version>${orika-core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+			<!--			<version>${caffeine.version}</version>-->
 		</dependency>
 
 		<!-- TWA -->
@@ -191,7 +215,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
 				<configuration>
-					<mainClass>com.twa.flights.api.provider.alpha.App</mainClass>
+					<mainClass>com.twa.flights.api.provider.alpha.ApiProviderAlphaApp</mainClass>
 				</configuration>
 				<executions>
 					<execution>

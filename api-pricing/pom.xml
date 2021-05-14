@@ -27,7 +27,7 @@
 
 	<properties>
 		<application.name>api-pricing</application.name>
-		<application.mainClass>com.twa.flights.api.pricing.App</application.mainClass>
+		<application.mainClass>com.twa.flights.api.pricing.PricingApp</application.mainClass>
 
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
@@ -187,7 +187,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
 				<configuration>
-					<mainClass>com.twa.flights.api.pricing.App</mainClass>
+					<mainClass>com.twa.flights.api.pricing.PricingApp</mainClass>
 				</configuration>
 				<executions>
 					<execution>

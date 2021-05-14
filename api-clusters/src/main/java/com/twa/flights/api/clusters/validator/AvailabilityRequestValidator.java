@@ -6,6 +6,8 @@ import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -19,6 +21,7 @@ import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
 @Component
 public class AvailabilityRequestValidator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AvailabilityRequestValidator.class);
 
     private static final String COMMA = ",";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
@@ -144,6 +147,7 @@ public class AvailabilityRequestValidator {
 
     private void validateCodeWithCatalog(String code) {
         try {
+            LOGGER.info("\n******Going to fetch City from Catalog Service*******\n");
             CityDTO city = catalogService.getCity(code);
 
             if (!StringUtils.hasLength(city.getCode()) || city.getCountry() == null

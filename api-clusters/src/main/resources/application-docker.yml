@@ -35,6 +35,10 @@ redis:
    host: api-clusters-db
    port: 6379    
 
+cache:
+  max-size: 100
+  duration: 60
+
 connector:
    catalog:
       host: api-catalog:6070

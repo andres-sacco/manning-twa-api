@@ -37,6 +37,7 @@ public class CatalogConnector {
     }
 
     public CityDTO getCityByCode(String code) {
+        LOGGER.info("Inside Catalog connector of Clusters service");
         final long readTimeout = configuration.getReadTimeout();
 
         HttpClient httpClient = HttpClient.create()

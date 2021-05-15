@@ -1,7 +1,6 @@
 package com.twa.flights.api.clusters.configuration.cache;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.google.common.collect.Lists;
 import com.twa.flights.api.clusters.configuration.settings.CacheSettings;
 import com.twa.flights.api.clusters.connector.CatalogConnector;
 import lombok.AllArgsConstructor;
@@ -12,9 +11,9 @@ import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import static com.google.common.collect.Lists.newArrayList;
 import static java.util.concurrent.TimeUnit.MINUTES;
 
 @Configuration
@@ -29,8 +28,8 @@ public class CacheManagerConfiguration {
     public CacheManager cacheManager() {
         CacheSettings cacheCitySettings = cacheConfiguration.getCacheSettings(CATALOG_CITY);
         SimpleCacheManager simpleCacheManager = new SimpleCacheManager();
-        simpleCacheManager.setCaches(Lists
-                .newArrayList(buildCaffeineCache(CATALOG_CITY, cacheCitySettings, catalogConnector::getCityByCode)));
+        simpleCacheManager.setCaches(
+                newArrayList(buildCaffeineCache(CATALOG_CITY, cacheCitySettings, catalogConnector::getCityByCode)));
         return simpleCacheManager;
     }
 

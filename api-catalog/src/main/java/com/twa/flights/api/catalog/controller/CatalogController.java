@@ -32,5 +32,4 @@ public class CatalogController implements CatalogResources {
         CityDTO response = entityService.getCityByCode(code);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 }

@@ -41,7 +41,7 @@ cache:
 
 connector:
    catalog:
-      host: api-catalog:6070
+      host: api-catalog-varnish:80
       responseTimeout: 2000
       connectionTimeout: 2000
       readTimeout: 2000

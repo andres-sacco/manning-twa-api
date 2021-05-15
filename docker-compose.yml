@@ -18,7 +18,17 @@ services:
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'muppet'
       MYSQL_ROOT_PASSWORD: 'muppet'
-      
+
+
+  api-catalog-varnish:
+    build: varnish/.
+    container_name: api-catalog-varnish
+    ports:
+      - 6080:80
+    restart: always
+    depends_on:
+      - api-catalog
+
   api-clusters:
     build: api-clusters/.
     container_name: api-clusters
@@ -38,7 +48,7 @@ services:
     container_name: api-itineraries-search
     ports:
      - 7070:7070
-    restart: always   
+    restart: always
 
   api-pricing:
     build: api-pricing/.
@@ -69,4 +79,4 @@ services:
     container_name: api-provider-beta
     ports:
      - 9070:9070
-    restart: always      
+    restart: always

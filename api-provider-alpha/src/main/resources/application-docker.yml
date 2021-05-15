@@ -15,7 +15,11 @@ jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
-    
+
+cache:
+  max-size: 100
+  duration: 60
+
 chaos:
   monkey:
     enabled: false

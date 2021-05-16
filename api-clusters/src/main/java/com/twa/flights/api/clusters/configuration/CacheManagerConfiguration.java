@@ -20,7 +20,7 @@ import java.time.Duration;
 @EnableCaching
 @Configuration
 public class CacheManagerConfiguration {
-    private static final String CATALOG_CITY = "catalog-city";
+    public static final String CATALOG_CITY = "catalog-city";
 
     private final JedisConnectionFactory jedisConnectionFactory;
     private final CitySerializer citySerializer;
@@ -28,7 +28,7 @@ public class CacheManagerConfiguration {
 
     @Autowired
     public CacheManagerConfiguration(JedisConnectionFactory jedisConnectionFactory, CitySerializer citySerializer,
-                                     CacheConfiguration cacheConfiguration) {
+            CacheConfiguration cacheConfiguration) {
         this.jedisConnectionFactory = jedisConnectionFactory;
         this.citySerializer = citySerializer;
         this.cacheConfiguration = cacheConfiguration;

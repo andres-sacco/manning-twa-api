@@ -42,8 +42,6 @@ services:
     container_name: api-clusters-remote-cache
     image: redis:alpine
     restart: always
-    ports:
-      - 5079:6379
 
   api-itineraries-search:
     build: api-itineraries-search/.

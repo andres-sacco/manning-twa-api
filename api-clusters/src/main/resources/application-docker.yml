@@ -32,12 +32,13 @@ spring:
     active: default
 
 redis:
-  host: localhost
-  port: 5079
+  host: api-clusters-remote-cache
+  port: 6379
 
 cache:
-  catalog-city:
-    expire-after-write-time: 60 # minutes
+  settings:
+    catalog-city:
+      expire-after-write-time: 60 # minutes
 
 connector:
    catalog:

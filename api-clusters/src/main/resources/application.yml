@@ -32,13 +32,13 @@ spring:
     active: default
 
 redis:
-   host: localhost
-   port: 6079
+  host: localhost
+  port: 5079
 
 cache:
+  settings:
     catalog-city:
       expire-after-write-time: 60 # minutes
-
 
 connector:
    catalog:

@@ -36,13 +36,15 @@ services:
      - 4070:4070
     restart: always
     links:
-      - api-clusters-db 
+      - api-clusters-remote-cache
 
-  api-clusters-db:
-    container_name: api-clusters-db
+  api-clusters-remote-cache:
+    container_name: api-clusters-remote-cache
     image: redis:alpine
-    restart: always     
-      
+    restart: always
+    ports:
+      - 5079:6379
+
   api-itineraries-search:
     build: api-itineraries-search/.
     container_name: api-itineraries-search
@@ -79,11 +81,4 @@ services:
     container_name: api-provider-beta
     ports:
      - 9070:9070
-    restart: always
-
-  api-clusters-remote-cache:
-    container_name: api-clusters-remote-cache
-    image: redis:alpine
-    ports:
-      - 5079:6379
     restart: always

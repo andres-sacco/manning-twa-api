@@ -1,7 +1,7 @@
 package com.twa.flights.api.clusters.configuration;
 
 import com.google.common.collect.Lists;
-import com.twa.flights.api.clusters.configuration.settings.CacheSettings;
+import com.twa.flights.api.clusters.configuration.settings.*;
 import com.twa.flights.api.clusters.serializer.CitySerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
@@ -24,14 +24,14 @@ public class CacheManagerConfiguration {
 
     private final JedisConnectionFactory jedisConnectionFactory;
     private final CitySerializer citySerializer;
-    private final CacheSettings cacheCitySettings;
+    private final CacheConfiguration cacheConfiguration;
 
     @Autowired
     public CacheManagerConfiguration(JedisConnectionFactory jedisConnectionFactory, CitySerializer citySerializer,
-            CacheSettings cacheCitySettings) {
+                                     CacheConfiguration cacheConfiguration) {
         this.jedisConnectionFactory = jedisConnectionFactory;
         this.citySerializer = citySerializer;
-        this.cacheCitySettings = cacheCitySettings;
+        this.cacheConfiguration = cacheConfiguration;
     }
 
     @Bean
@@ -44,7 +44,7 @@ public class CacheManagerConfiguration {
     }
 
     private RedisCacheConfiguration redisCacheConfiguration() {
-        // CacheSettings cacheCitySettings = cacheConfiguration.getCacheSettings(CATALOG_CITY);
+        CacheSettings cacheCitySettings = cacheConfiguration.getCacheSettings(CATALOG_CITY);
         return RedisCacheConfiguration.defaultCacheConfig()
                 .serializeKeysWith(
                         RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))

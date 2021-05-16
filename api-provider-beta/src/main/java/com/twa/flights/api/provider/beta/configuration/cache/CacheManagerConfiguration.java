@@ -1,8 +1,6 @@
 package com.twa.flights.api.provider.beta.configuration.cache;
 
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.google.common.collect.Lists;
-import com.twa.flights.api.provider.beta.connector.CatalogConnector;
+import com.twa.flights.api.provider.beta.serializer.CitySerializer;
 import com.twa.flights.api.provider.beta.settings.CacheSettings;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.CacheManager;
@@ -11,9 +9,16 @@ import org.springframework.cache.caffeine.CaffeineCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
+import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.time.Duration;
 import java.util.function.Function;
 
+import static com.google.common.collect.Lists.newArrayList;
 import static java.util.concurrent.TimeUnit.MINUTES;
 
 @Configuration
@@ -21,23 +26,26 @@ import static java.util.concurrent.TimeUnit.MINUTES;
 @AllArgsConstructor
 public class CacheManagerConfiguration {
     public static final String CATALOG_CITY = "CATALOG_CITY";
+
     private final CacheConfiguration cacheConfiguration;
-    private final CatalogConnector catalogConnector;
+    private final JedisConnectionFactory jedisConnectionFactory;
+    private final CitySerializer citySerializer;
 
     @Bean
     public CacheManager cacheManager() {
-        CacheSettings cacheCitySettings = cacheConfiguration.getCacheSettings(CATALOG_CITY);
         SimpleCacheManager simpleCacheManager = new SimpleCacheManager();
-        simpleCacheManager.setCaches(Lists
-                .newArrayList(buildCaffeineCache(CATALOG_CITY, cacheCitySettings, catalogConnector::getCityByCode)));
+        simpleCacheManager.setCaches(newArrayList(RedisCacheManager.builder(jedisConnectionFactory)
+                .cacheDefaults(redisCacheConfiguration()).build().getCache(CATALOG_CITY)));
+
         return simpleCacheManager;
     }
 
-    public static CaffeineCache buildCaffeineCache(String cacheName, CacheSettings settings,
-            Function<String, Object> serviceCall) {
-        return new CaffeineCache(cacheName,
-                Caffeine.newBuilder().refreshAfterWrite(settings.getRefreshAfterWriteTime(), MINUTES)
-                        .expireAfterWrite(settings.getExpireAfterWriteTime(), MINUTES)
-                        .maximumSize(settings.getMaxSize()).build(key -> serviceCall.apply(key.toString())));
+    private RedisCacheConfiguration redisCacheConfiguration() {
+        CacheSettings cacheCitySettings = cacheConfiguration.getCacheSettings(CATALOG_CITY);
+        return RedisCacheConfiguration.defaultCacheConfig()
+                .serializeKeysWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(citySerializer))
+                .entryTtl(Duration.ofMinutes(cacheCitySettings.getExpireAfterWriteTime()));
     }
 }

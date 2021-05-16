@@ -11,6 +11,10 @@ server:
   servlet:
     context-path: /api/flights/provider/beta
 
+redis:
+  host: api-clusters-remote-cache
+  port: 6379
+
 jetty:
   threadPool:
     maxThreads: 10

@@ -1,4 +1,4 @@
-package com.twa.flights.api.clusters.configuration.settings;
+package com.twa.flights.api.provider.beta.configuration.settings;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

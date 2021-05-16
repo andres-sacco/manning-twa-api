@@ -15,7 +15,11 @@ jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
-    
+
+redis:
+  host: localhost
+  port: 5079
+
 chaos:
   monkey:
     enabled: false
@@ -40,6 +44,4 @@ connector:
 cache:
   configuration:
     CATALOG_CITY:
-      refreshAfterWriteTime: 5 #MINUTES
-      expireAfterWriteTime: 10 #MINUTES
       maxSize: 180

@@ -10,19 +10,26 @@ services:
     ports:
      - 3310:3306
 
+  api-clusters-remote-cache:
+    container_name: api-clusters-remote-cache
+    image: redis:alpine
+    restart: always
+    ports:
+      - 5079:6379
+
   api-clusters-db:
     container_name: api-clusters-db
     image: redis:alpine
     restart: always
     ports:
-     - 6079:6379
-     
+      - 6079:5079
+
   api-pricing-db:
     container_name: api-pricing-db
     image: mysql:5.7
     restart: always
     environment:
       MYSQL_DATABASE: 'flights_pricing'
-      MYSQL_ROOT_PASSWORD: 'muppet'        
+      MYSQL_ROOT_PASSWORD: 'muppet'
     ports:
      - 3311:3306

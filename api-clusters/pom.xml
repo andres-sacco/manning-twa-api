@@ -158,11 +158,6 @@
 			<version>${orika-core.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.ben-manes.caffeine</groupId>
-			<artifactId>caffeine</artifactId>
-		</dependency>
-
 		<!-- TWA -->
 		<dependency>
 			<groupId>com.twa.flights.common</groupId>

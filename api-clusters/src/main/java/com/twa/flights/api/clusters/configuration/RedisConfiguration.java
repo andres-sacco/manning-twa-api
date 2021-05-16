@@ -1,5 +1,7 @@
 package com.twa.flights.api.clusters.configuration;
 
+import com.twa.flights.api.clusters.dto.*;
+import com.twa.flights.api.clusters.serializer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -9,8 +11,6 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
-import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
-import com.twa.flights.api.clusters.serializer.ClusterSearchSerializer;
 
 @Configuration
 @ConfigurationProperties
@@ -20,9 +20,12 @@ public class RedisConfiguration {
 
     private ClusterSearchSerializer clusterSearchSerializer;
 
+    private CitySerializer citySerializer;
+
     @Autowired
-    public RedisConfiguration(ClusterSearchSerializer clusterSearchSerializer) {
+    public RedisConfiguration(ClusterSearchSerializer clusterSearchSerializer, CitySerializer citySerializer) {
         this.clusterSearchSerializer = clusterSearchSerializer;
+        this.citySerializer = citySerializer;
     }
 
     @Bean
@@ -38,6 +41,16 @@ public class RedisConfiguration {
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
 
         redisTemplate.setValueSerializer(clusterSearchSerializer);
+
+        return redisTemplate;
+    }
+
+    @Bean
+    public RedisTemplate<String, CityDTO> redisCityTemplate() {
+        RedisTemplate<String, CityDTO> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(jedisConnectionFactory());
+
+        redisTemplate.setValueSerializer(citySerializer);
 
         return redisTemplate;
     }

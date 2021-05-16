@@ -10,7 +10,7 @@ import com.twa.flights.api.clusters.connector.CatalogConnector;
 import com.twa.flights.api.clusters.dto.CityDTO;
 
 @Service
-@CacheConfig(cacheNames = { "catalog" })
+@CacheConfig
 public class CatalogService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CatalogService.class);
@@ -22,7 +22,7 @@ public class CatalogService {
         this.catalogConnector = catalogConnector;
     }
 
-    @Cacheable(unless="#result == null")
+    @Cacheable(value = "catalog-city", unless = "#result == null")
     public CityDTO getCity(String code) {
         LOGGER.debug("Obtain the information for code: {}", code);
         return catalogConnector.getCityByCode(code);

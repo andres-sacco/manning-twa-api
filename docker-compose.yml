@@ -80,3 +80,10 @@ services:
     ports:
      - 9070:9070
     restart: always
+
+  api-clusters-remote-cache:
+    container_name: api-clusters-remote-cache
+    image: redis:alpine
+    ports:
+      - 5079:6379
+    restart: always

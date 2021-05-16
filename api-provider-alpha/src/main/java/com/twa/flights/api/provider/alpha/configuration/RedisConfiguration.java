@@ -2,6 +2,7 @@ package com.twa.flights.api.provider.alpha.configuration;
 
 import com.twa.flights.api.provider.alpha.configuration.settings.RedisSettings;
 import com.twa.flights.api.provider.alpha.dto.CityDTO;
+import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,6 +12,7 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
+@Data
 @Configuration
 @ConfigurationProperties // (prefix = "redis")
 public class RedisConfiguration {
@@ -33,13 +35,5 @@ public class RedisConfiguration {
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
 
         return redisTemplate;
-    }
-
-    public RedisSettings getRedis() {
-        return redis;
-    }
-
-    public void setRedis(RedisSettings redis) {
-        this.redis = redis;
     }
 }

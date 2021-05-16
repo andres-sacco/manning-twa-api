@@ -1,6 +1,7 @@
 package com.twa.flights.api.clusters.configuration;
 
 import com.twa.flights.api.clusters.dto.CityDTO;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import com.twa.flights.api.clusters.serializer.ClusterSearchSerializer;
 
 import java.util.Map;
 
+@Data
 @Configuration
 @ConfigurationProperties // (prefix = "redis")
 public class RedisConfiguration {
@@ -65,13 +67,4 @@ public class RedisConfiguration {
 
         return redisTemplate;
     }
-
-    public Map<String, RedisSettings> getRedis() {
-        return redis;
-    }
-
-    public void setRedis(Map<String, RedisSettings> redis) {
-        this.redis = redis;
-    }
-
 }

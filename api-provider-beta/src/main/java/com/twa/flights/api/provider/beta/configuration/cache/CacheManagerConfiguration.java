@@ -1,7 +1,7 @@
 package com.twa.flights.api.provider.beta.configuration.cache;
 
+import com.twa.flights.api.provider.beta.configuration.settings.CacheSettings;
 import com.twa.flights.api.provider.beta.serializer.CitySerializer;
-import com.twa.flights.api.provider.beta.settings.CacheSettings;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;

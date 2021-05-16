@@ -1,6 +1,6 @@
 package com.twa.flights.api.provider.beta.configuration.cache;
 
-import com.twa.flights.api.provider.beta.settings.CacheSettings;
+import com.twa.flights.api.provider.beta.configuration.settings.CacheSettings;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

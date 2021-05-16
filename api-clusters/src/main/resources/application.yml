@@ -32,16 +32,16 @@ spring:
     active: default
     
 redis:
-  db:
-    host: localhost
-    port: 6079
-  remote-cache:
-    host: localhost
-    port: 5079
-
+   db:
+      host: localhost
+      port: 6079    
+   remote-cache:
+      host: localhost
+      port: 5079     
+    
 connector:
    catalog:
-      host: localhost:6070
+      host: localhost:6080
       responseTimeout: 2000
       connectionTimeout: 2000
       readTimeout: 2000
@@ -54,8 +54,8 @@ connector:
       host: localhost:7070
       responseTimeout: 10000
       connectionTimeout: 10000
-      readTimeout: 10000
+      readTimeout: 10000 
 cache:
   configuration:
     CATALOG_CITY:
-      expireAfterWriteTime: 10 #MINUTES
+       expireAfterWriteTime: 10 #MINUTES 

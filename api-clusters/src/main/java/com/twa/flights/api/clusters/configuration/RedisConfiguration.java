@@ -1,10 +1,9 @@
 package com.twa.flights.api.clusters.configuration;
 
+import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
 import com.twa.flights.api.clusters.dto.CityDTO;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.clusters.serializer.ClusterSearchSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -13,16 +12,12 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
-import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
-import com.twa.flights.api.clusters.serializer.ClusterSearchSerializer;
-
 import java.util.Map;
 
-@Data
 @Configuration
-@ConfigurationProperties // (prefix = "redis")
+@ConfigurationProperties
 public class RedisConfiguration {
+
     private Map<String, RedisSettings> redis;
 
     private ClusterSearchSerializer clusterSearchSerializer;
@@ -66,5 +61,13 @@ public class RedisConfiguration {
         redisTemplate.setConnectionFactory(catalogJedisConnectionFactory());
 
         return redisTemplate;
+    }
+
+    public Map<String, RedisSettings> getRedis() {
+        return redis;
+    }
+
+    public void setRedis(Map<String, RedisSettings> redis) {
+        this.redis = redis;
     }
 }

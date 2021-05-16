@@ -12,7 +12,6 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
-@Data
 @Configuration
 @ConfigurationProperties // (prefix = "redis")
 public class RedisConfiguration {
@@ -35,5 +34,13 @@ public class RedisConfiguration {
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
 
         return redisTemplate;
+    }
+
+    public RedisSettings getRedis() {
+        return redis;
+    }
+
+    public void setRedis(RedisSettings redis) {
+        this.redis = redis;
     }
 }

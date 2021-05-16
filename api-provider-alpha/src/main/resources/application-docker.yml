@@ -15,11 +15,7 @@ jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
-
-redis:
-  host: api-clusters-remote-cache
-  port: 6379
-
+    
 chaos:
   monkey:
     enabled: false
@@ -35,6 +31,10 @@ spring:
   profiles:
     active: chaos-monkey
     
+redis:
+   host: api-clusters-remote-cache
+   port: 6379
+
 connector:
    catalog:
       host: api-catalog-cache:80
@@ -44,4 +44,6 @@ connector:
 cache:
   configuration:
     CATALOG_CITY:
-      maxSize: 180
+       refreshAfterWriteTime: 5 #MINUTES
+       expireAfterWriteTime: 10 #MINUTES
+       maxSize: 180

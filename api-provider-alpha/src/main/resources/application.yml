@@ -15,11 +15,7 @@ jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
-
-redis:
-  host: localhost
-  port: 5079
-
+    
 chaos:
   monkey:
     enabled: false
@@ -34,7 +30,11 @@ chaos:
 spring:
   profiles:
     active: chaos-monkey
-    
+
+redis:
+   host: localhost
+   port: 5079
+
 connector:
    catalog:
       host: localhost:6070
@@ -44,4 +44,6 @@ connector:
 cache:
   configuration:
     CATALOG_CITY:
-      maxSize: 180
+       refreshAfterWriteTime: 5 #MINUTES
+       expireAfterWriteTime: 10 #MINUTES
+       maxSize: 180

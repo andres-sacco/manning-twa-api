@@ -15,15 +15,15 @@ services:
     image: redis:alpine
     restart: always
     ports:
-      - 5079:6379
+     - 5079:6379
 
   api-clusters-db:
     container_name: api-clusters-db
     image: redis:alpine
     restart: always
     ports:
-      - 6079:5079
-
+     - 6079:6379
+     
   api-pricing-db:
     container_name: api-pricing-db
     image: mysql:5.7

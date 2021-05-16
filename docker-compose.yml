@@ -72,11 +72,15 @@ services:
     container_name: api-provider-alpha
     ports:
      - 8070:8070
-    restart: always 
-    
+    restart: always
+    links:
+      - api-clusters-remote-cache
+
   api-provider-beta:
     build: api-provider-beta/.
     container_name: api-provider-beta
     ports:
      - 9070:9070
     restart: always
+    links:
+      - api-clusters-remote-cache

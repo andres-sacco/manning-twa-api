@@ -3,6 +3,7 @@ package com.twa.flights.api.provider.alpha.connector;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import com.twa.flights.api.provider.alpha.connector.filter.ConnectorFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +43,14 @@ public class CatalogConnector {
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, Math.toIntExact(configuration.getConnectionTimeout()))
                 .responseTimeout(Duration.ofMillis(configuration.getResponseTimeout()))
-                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)));
+                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)))
+                .compress(true);
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .defaultHeader(HttpHeaders.ACCEPT_ENCODING, "gzip").filter(ConnectorFilter.logRequest())
+                .filter(ConnectorFilter.logResponse()).clientConnector(connector).build();
 
         return client.get().uri(configuration.getHost().concat(GET_CITY_BY_CODE).concat(code)).retrieve()
                 .onStatus(HttpStatus::isError, clientResponse -> {

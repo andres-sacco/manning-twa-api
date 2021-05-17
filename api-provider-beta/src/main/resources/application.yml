@@ -10,6 +10,10 @@ server:
   port: 9070
   servlet:
     context-path: /api/flights/provider/beta
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json,text/plain
 
 jetty:
   threadPool:

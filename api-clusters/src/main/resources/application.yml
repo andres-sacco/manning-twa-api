@@ -51,3 +51,7 @@ connector:
       responseTimeout: 10000
       connectionTimeout: 10000
       readTimeout: 10000         
+
+cache:
+   maxSize: 1000
+   timeout: 60

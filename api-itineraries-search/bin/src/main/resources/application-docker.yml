@@ -1,0 +1,44 @@
+management:
+  health.db.enabled: false
+  endpoints:    
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+
+server:
+  port: 7070
+  servlet:
+    context-path: /api/flights/itineraries-search
+
+jetty:
+  threadPool:
+    maxThreads: 10
+    minThreads: 10
+
+chaos:
+  monkey:
+    enabled: false
+    watcher:
+      restController: true
+    assaults:
+      exceptionsActive: true
+      latencyActive: true   
+      latencyRangeStart: 10
+      latencyRangeEnd: 12000  
+      
+spring:
+  profiles:
+    active: default
+
+connector:  
+   provider-alpha:
+      host: api-provider-alpha:8070
+      responseTimeout: 5000
+      connectionTimeout: 5000
+      readTimeout: 5000         
+   provider-beta:
+      host: api-provider-beta:9070
+      responseTimeout: 5000
+      connectionTimeout: 5000
+      readTimeout: 5000 

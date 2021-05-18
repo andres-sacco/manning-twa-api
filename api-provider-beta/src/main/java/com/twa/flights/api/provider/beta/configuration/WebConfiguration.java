@@ -2,6 +2,7 @@ package com.twa.flights.api.provider.beta.configuration;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -14,6 +15,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
@@ -24,6 +28,7 @@ public class WebConfiguration implements WebMvcConfigurer {
                 ObjectMapper objectIdMapper = ((MappingJackson2HttpMessageConverter) converter).getObjectMapper();
                 objectIdMapper.setPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CAMEL_CASE);
                 objectIdMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                objectIdMapper.setSerializationInclusion(NON_NULL);
             }
         }
     }

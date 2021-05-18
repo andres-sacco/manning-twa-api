@@ -1,5 +1,6 @@
 package com.twa.flights.api.clusters.repository.impl;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -56,8 +57,14 @@ public class ClustersRepositoryImpl implements ClustersRepository {
                 RedisSerializer<ClusterSearchDTO> valueSerializer = (RedisSerializer<ClusterSearchDTO>) redisTemplate
                         .getValueSerializer();
 
-                connection.pSetEx(keySerializer.serialize(dataToInsert.getId()), TOKEN_TTL,
-                        valueSerializer.serialize(dataToInsert));
+                final byte[] serialized = valueSerializer.serialize(dataToInsert);
+                try {
+                    LOGGER.info("\n\n\n*********** serialized before redis save: {} ************\n\n\n",
+                            new String(serialized, "UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                connection.pSetEx(keySerializer.serialize(dataToInsert.getId()), TOKEN_TTL, serialized);
                 return null;
             });
         });

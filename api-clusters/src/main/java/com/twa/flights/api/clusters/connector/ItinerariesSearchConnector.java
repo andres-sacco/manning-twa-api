@@ -45,7 +45,7 @@ public class ItinerariesSearchConnector {
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, Math.toIntExact(configuration.getConnectionTimeout()))
                 .responseTimeout(Duration.ofMillis(configuration.getResponseTimeout()))
-                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)))
+                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.SECONDS)))
                 .compress(true);
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);

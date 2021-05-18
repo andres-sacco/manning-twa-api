@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.twa.flights.api.clusters.helper.CompressionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +29,8 @@ public class JsonSerializer {
     public static byte[] serialize(Object object) {
         byte[] compressedJson = null;
         try {
-            compressedJson = OBJECT_MAPPER.writeValueAsString(object).getBytes();
+            final String data = OBJECT_MAPPER.writeValueAsString(object);
+            compressedJson = CompressionHelper.compress(data);
         } catch (IOException e) {
             LOGGER.error("Error serializing object: {}", e.getMessage());
         }
@@ -41,7 +43,8 @@ public class JsonSerializer {
 
         T object = null;
         try {
-            object = OBJECT_MAPPER.readValue(raw, reference);
+            String data = CompressionHelper.decompress(raw);
+            object = OBJECT_MAPPER.readValue(data, reference);
         } catch (IOException e) {
             LOGGER.error("Can't deserialize object: {}", e.getMessage());
         }

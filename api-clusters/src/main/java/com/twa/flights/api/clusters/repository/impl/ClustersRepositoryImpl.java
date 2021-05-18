@@ -58,12 +58,6 @@ public class ClustersRepositoryImpl implements ClustersRepository {
                         .getValueSerializer();
 
                 final byte[] serialized = valueSerializer.serialize(dataToInsert);
-                try {
-                    LOGGER.info("\n\n\n*********** serialized before redis save: {} ************\n\n\n",
-                            new String(serialized, "UTF-8"));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
                 connection.pSetEx(keySerializer.serialize(dataToInsert.getId()), TOKEN_TTL, serialized);
                 return null;
             });

@@ -17,14 +17,14 @@ services:
       MYSQL_DATABASE: 'flights_catalog'
       MYSQL_ROOT_PASSWORD: 'muppet'
       
-  api-clusters:
-    build: api-clusters/.
-    container_name: api-clusters
-    ports:
-     - 4070:4070
-    restart: always
-    links:
-      - api-clusters-db 
+#  api-clusters:
+#    build: api-clusters/.
+#    container_name: api-clusters
+#    ports:
+#     - 4070:4070
+#    restart: always
+#    links:
+#      - api-clusters-db
 
   api-clusters-db:
     container_name: api-clusters-db
@@ -65,4 +65,12 @@ services:
     container_name: api-provider-beta
     ports:
      - 9070:9070
-    restart: always      
+    restart: always
+
+  api-clusters-zookeeper:
+    image: docker.io/bitnami/zookeeper:3-debian-10
+    container_name: api-clusters-zookeeper
+    ports:
+      - 2181:2181
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes

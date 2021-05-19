@@ -6,6 +6,12 @@ management:
       exposure:
         include: "*"
 
+zookeeper:
+  host: api-clusters-zookeeper:2181
+  maxRetries: 2
+  timeBetweenRetries: 100
+  connectionTimeout: 1000
+
 server:
   port: 4070
   servlet:

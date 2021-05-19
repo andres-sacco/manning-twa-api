@@ -26,3 +26,11 @@ services:
       MYSQL_ROOT_PASSWORD: 'muppet'        
     ports:
      - 3311:3306
+
+  api-clusters-zookeeper:
+    image: docker.io/bitnami/zookeeper:3-debian-10
+    container_name: api-clusters-zookeeper
+    ports:
+      - 2181:2181
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes

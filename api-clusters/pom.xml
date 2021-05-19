@@ -32,6 +32,10 @@
 		<!-- Spring -->
 		<spring-boot.version>2.4.2</spring-boot.version>
 
+		<!-- ZooKeeper -->
+		<curator-recipes.version>5.1.0</curator-recipes.version>
+		<zookeeper.version>3.6.2</zookeeper.version>
+
 		<!-- General -->
 		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
@@ -101,7 +105,32 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+		<!-- ZooKeeper -->
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-recipes</artifactId>
+			<version>${curator-recipes.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.zookeeper</groupId>
+					<artifactId>zookeeper</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
+		</dependency>
+
 		<!-- General -->
+
 		<dependency>
 		    <groupId>de.codecentric</groupId>
 		    <artifactId>chaos-monkey-spring-boot</artifactId>
@@ -154,10 +183,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
 				<exclusion>
 					<groupId>org.ow2.asm</groupId>
 					<artifactId>asm</artifactId>

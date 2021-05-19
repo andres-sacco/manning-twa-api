@@ -6,6 +6,12 @@ management:
       exposure:
         include: "*"
 
+zookeeper:
+  host: localhost:2181
+  maxRetries: 2
+  timeBetweenRetries: 100
+  connectiontimeout: 10000000
+
 server:
   port: 4070
   servlet:
@@ -30,7 +36,7 @@ chaos:
 spring:
   profiles:
     active: default
-    
+
 redis:
    host: localhost
    port: 6079
@@ -38,16 +44,16 @@ redis:
 connector:
    catalog:
       host: localhost:6070
-      responseTimeout: 2000
-      connectionTimeout: 2000
-      readTimeout: 2000
+      responsetimeout: 10000000
+      connectiontimeout: 10000000
+      readtimeout: 10000000
    pricing:
       host: localhost:5070
-      responseTimeout: 10000
-      connectionTimeout: 10000
-      readTimeout: 10000   
+      responsetimeout: 100000000
+      connectiontimeout: 100000000
+      readtimeout: 100000000
    itineraries-search:
       host: localhost:7070
-      responseTimeout: 10000
-      connectionTimeout: 10000
-      readTimeout: 10000         
+      responsetimeout: 100000000
+      connectiontimeout: 100000000
+      readtimeout: 100000000

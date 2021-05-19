@@ -17,19 +17,21 @@ services:
       MYSQL_DATABASE: 'flights_catalog'
       MYSQL_ROOT_PASSWORD: 'muppet'
       
-#  api-clusters:
-#    build: api-clusters/.
-#    container_name: api-clusters
-#    ports:
-#     - 4070:4070
-#    restart: always
-#    links:
-#      - api-clusters-db
+  api-clusters:
+    build: api-clusters/.
+    container_name: api-clusters
+    ports:
+     - 4070:4070
+    restart: always
+    links:
+      - api-clusters-db
 
   api-clusters-db:
     container_name: api-clusters-db
     image: redis:alpine
-    restart: always     
+    restart: always
+    ports:
+      - 6079:6379
       
   api-itineraries-search:
     build: api-itineraries-search/.

@@ -34,6 +34,6 @@ spring:
 connector:
    catalog:
       host: localhost:6070
-      responseTimeout: 1000
-      connectionTimeout: 1000
-      readTimeout: 1000
+      responsetimeout: 10000000
+      connectiontimeout: 10000000
+      readtimeout: 10000000

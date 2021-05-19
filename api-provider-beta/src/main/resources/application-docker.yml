@@ -37,3 +37,12 @@ connector:
       responseTimeout: 1000
       connectionTimeout: 1000
       readTimeout: 1000
+
+cache:
+  configuration:
+    CATALOG_CITY:
+       expireAfterWriteTime: 10 #MINUTES
+
+redis:
+   host: api-clusters-remote-cache
+   port: 6379

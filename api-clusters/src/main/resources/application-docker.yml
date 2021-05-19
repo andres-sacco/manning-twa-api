@@ -37,7 +37,7 @@ redis:
 
 connector:
    catalog:
-      host: api-catalog:6070
+      host: varnish:9090
       responseTimeout: 2000
       connectionTimeout: 2000
       readTimeout: 2000

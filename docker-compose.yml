@@ -66,3 +66,11 @@ services:
     ports:
      - 9070:9070
     restart: always      
+
+  varnish:
+    build: varnish/.
+    container_name: varnish
+    ports:
+     - 9090:9090
+    restart: always
+    depends_on: [api-catalog]

@@ -6,14 +6,16 @@ management:
       exposure:
         include: "*"
 
+zookeeper:
+  host: api-clusters-zookeeper:2181
+  maxRetries: 2
+  timeBetweenRetries: 100
+  connectiontimeout: 10000000
+
 server:
   port: 4070
   servlet:
     context-path: /api/flights/clusters
-  compression:
-    enabled: true
-    min-response-size: 2048
-    mime-types: application/json,text/plain
 
 jetty:
   threadPool:
@@ -36,30 +38,22 @@ spring:
     active: default
          
 redis:
-   db:
-      host: api-clusters-db
-      port: 6379    
-   remote-cache:
-      host: api-clusters-remote-cache
-      port: 6379        
+   host: api-clusters-db
+   port: 6379    
 
 connector:
    catalog:
-      host: api-catalog-cache:80
-      responseTimeout: 2000
-      connectionTimeout: 2000
-      readTimeout: 2000
+      host: api-catalog:6070
+      responsetimeout: 10000000
+      connectiontimeout: 10000000
+      readtimeout: 10000000
    pricing:
       host: api-pricing:5070
-      responseTimeout: 10000
-      connectionTimeout: 10000
-      readTimeout: 10000   
+      responsetimeout: 100000000
+      connectiontimeout: 100000000
+      readtimeout: 100000000
    itineraries-search:
       host: api-itineraries-search:7070
-      responseTimeout: 10000
-      connectionTimeout: 10000
-      readTimeout: 10000   
-cache:
-  configuration:
-    CATALOG_CITY:
-       expireAfterWriteTime: 10 #MINUTES    
+      responsetimeout: 100000000
+      connectiontimeout: 100000000
+      readtimeout: 100000000

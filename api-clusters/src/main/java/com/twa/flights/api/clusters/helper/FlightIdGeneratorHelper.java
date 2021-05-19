@@ -1,7 +1,5 @@
 package com.twa.flights.api.clusters.helper;
 
-import java.time.LocalDateTime;
-
 import org.springframework.stereotype.Component;
 
 import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
@@ -19,8 +17,6 @@ public class FlightIdGeneratorHelper {
         String prefix = "TWA";
 
         id.append(prefix).append(UNDERSCORE_CHAR);
-
-        id.append("g").append(EQUALS_CHAR).append(LocalDateTime.now().toString()).append(UNDERSCORE_CHAR);
 
         id.append("f").append(EQUALS_CHAR).append(availabilityRequest.getFrom()).append(UNDERSCORE_CHAR);
 

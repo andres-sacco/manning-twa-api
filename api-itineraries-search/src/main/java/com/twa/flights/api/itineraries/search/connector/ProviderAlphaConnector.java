@@ -41,7 +41,7 @@ public class ProviderAlphaConnector {
     public List<ItineraryDTO> availability(AvailabilityRequestDTO request) {
         final long readTimeout = configuration.getReadTimeout();
 
-        HttpClient httpClient = HttpClient.create()
+        HttpClient httpClient = HttpClient.create().compress(true)
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, Math.toIntExact(configuration.getConnectionTimeout()))
                 .responseTimeout(Duration.ofMillis(configuration.getResponseTimeout()))
                 .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)));
@@ -49,7 +49,10 @@ public class ProviderAlphaConnector {
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .defaultHeader(HttpHeaders.ACCEPT_ENCODING, "gzip").filters(filters -> {
+                    filters.add(ConnectorFilter.logRequest(LOGGER));
+                    filters.add(ConnectorFilter.logResponse(LOGGER));
+                }).clientConnector(connector).build();
 
         return client.get()
                 .uri(uriBuilder -> uriBuilder.path(configuration.getHost().concat(SEARCH))

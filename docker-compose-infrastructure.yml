@@ -12,12 +12,12 @@ services:
     ports:
      - 3310:3306
 
-  api-clusters-db:
-    container_name: api-clusters-db
+  api-clusters-remote-cache:
+    container_name: api-clusters-remote-cache
     image: redis:alpine
     restart: always
     ports:
-     - 6079:6379
+     - 5079:6379
      
   api-pricing-db:
     container_name: api-pricing-db

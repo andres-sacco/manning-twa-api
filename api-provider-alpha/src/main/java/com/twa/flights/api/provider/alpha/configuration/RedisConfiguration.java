@@ -1,16 +1,14 @@
-package com.twa.flights.api.clusters.configuration;
+package com.twa.flights.api.provider.alpha.configuration;
 
-import com.twa.flights.api.clusters.dto.*;
-import com.twa.flights.api.clusters.serializer.*;
+import com.twa.flights.api.provider.alpha.configuration.settings.RedisSettings;
+import com.twa.flights.api.provider.alpha.dto.CityDTO;
+import com.twa.flights.api.provider.alpha.serializer.CitySerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-
-import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
 
 @Configuration
 @ConfigurationProperties
@@ -18,13 +16,10 @@ public class RedisConfiguration {
 
     private RedisSettings redis;
 
-    private ClusterSearchSerializer clusterSearchSerializer;
-
     private CitySerializer citySerializer;
 
     @Autowired
-    public RedisConfiguration(ClusterSearchSerializer clusterSearchSerializer, CitySerializer citySerializer) {
-        this.clusterSearchSerializer = clusterSearchSerializer;
+    public RedisConfiguration(CitySerializer citySerializer) {
         this.citySerializer = citySerializer;
     }
 
@@ -33,16 +28,6 @@ public class RedisConfiguration {
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(redis.getHost(),
                 redis.getPort());
         return new JedisConnectionFactory(redisStandaloneConfiguration);
-    }
-
-    @Bean
-    public RedisTemplate<String, ClusterSearchDTO> redisTemplate() {
-        RedisTemplate<String, ClusterSearchDTO> redisTemplate = new RedisTemplate<>();
-        redisTemplate.setConnectionFactory(jedisConnectionFactory());
-
-        redisTemplate.setValueSerializer(clusterSearchSerializer);
-
-        return redisTemplate;
     }
 
     @Bean

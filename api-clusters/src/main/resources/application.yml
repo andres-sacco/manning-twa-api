@@ -30,15 +30,16 @@ chaos:
 spring:
   profiles:
     active: default
-    
+
 redis:
-   host: localhost
-   port: 6079
+  host: localhost
+  port: 5079
 
 cache:
-    max-size: 100
-    duration: 60
-    
+  settings:
+    catalog-city:
+      expire-after-write-time: 60 # minutes
+
 connector:
    catalog:
       host: localhost:6070

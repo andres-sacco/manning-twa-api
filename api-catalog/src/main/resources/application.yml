@@ -30,7 +30,9 @@ chaos:
 spring:
   profiles:
     active: default
-       
+  jackson:
+    default-property-inclusion: non_null
+
   flyway:
     locations: classpath:db/migration
     sql-migration-prefix: V

@@ -39,7 +39,9 @@ chaos:
 spring:
   profiles:
     active: chaos-monkey
-    
+  jackson:
+    default-property-inclusion: non_null
+
 connector:
    catalog:
       host: localhost:6070

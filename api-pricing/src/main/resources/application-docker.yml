@@ -51,3 +51,5 @@ spring:
         ejb.naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy                
         dialect: org.hibernate.dialect.MySQLDialect
         hbm2ddl.auto: validate
+  jackson:
+    default-property-inclusion: non_null

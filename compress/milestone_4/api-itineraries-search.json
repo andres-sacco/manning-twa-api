@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "ea1de312-f9ec-45a2-916e-9be7befca7c3",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 0,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 0,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 132.58,
+        "base": 778.02,
+        "quantity": 1,
+        "subtotal": 910.6,
+        "total": 910.6,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 87.17,
+        "base": 670.11,
+        "quantity": 1,
+        "subtotal": 757.28,
+        "total": 757.28,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 15.76,
+        "base": 156,
+        "quantity": 1,
+        "subtotal": 171.76,
+        "total": 171.76,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AR"
+  },
+  {
+    "id": "3c08e796-0932-429c-b01d-eb0785428880",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 6,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 5,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 78.08,
+        "base": 389.22,
+        "quantity": 1,
+        "subtotal": 467.3,
+        "total": 467.3,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 89.04,
+        "base": 801.07,
+        "quantity": 1,
+        "subtotal": 890.11,
+        "total": 890.11,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 152.91,
+        "base": 102.47,
+        "quantity": 1,
+        "subtotal": 255.38,
+        "total": 255.38,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "7fff420b-3cce-4a6e-88d0-27789e29acb7",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 8,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 3,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 200.07,
+        "base": 560.45,
+        "quantity": 1,
+        "subtotal": 760.52,
+        "total": 760.52,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 163.08,
+        "base": 314.91,
+        "quantity": 1,
+        "subtotal": 477.99,
+        "total": 477.99,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 102.84,
+        "base": 674.43,
+        "quantity": 1,
+        "subtotal": 777.27,
+        "total": 777.27,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "KL"
+  },
+  {
+    "id": "c9cc725f-4adf-4120-aa1e-8fd183bfefad",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 6,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 1,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 159.59,
+        "base": 601.75,
+        "quantity": 1,
+        "subtotal": 761.34,
+        "total": 761.34,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 186.51,
+        "base": 469.07,
+        "quantity": 1,
+        "subtotal": 655.58,
+        "total": 655.58,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 25.36,
+        "base": 839.97,
+        "quantity": 1,
+        "subtotal": 865.33,
+        "total": 865.33,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AR"
+  },
+  {
+    "id": "5801fd13-b244-47d9-8fa9-f1f160d1899b",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 7,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 9,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 96.56,
+        "base": 287.04,
+        "quantity": 1,
+        "subtotal": 383.6,
+        "total": 383.6,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 97.25,
+        "base": 607.61,
+        "quantity": 1,
+        "subtotal": 704.86,
+        "total": 704.86,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 222.64,
+        "base": 86.21,
+        "quantity": 1,
+        "subtotal": 308.85,
+        "total": 308.85,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "c77c3537-c3b4-4c57-98c6-e9c60c2539fd",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 1,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 1,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 65.46,
+        "base": 278.19,
+        "quantity": 1,
+        "subtotal": 343.65,
+        "total": 343.65,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 136.01,
+        "base": 540.1,
+        "quantity": 1,
+        "subtotal": 676.11,
+        "total": 676.11,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 42.33,
+        "base": 307.77,
+        "quantity": 1,
+        "subtotal": 350.1,
+        "total": 350.1,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "FY"
+  },
+  {
+    "id": "344aa96e-c220-4931-99a2-fb8a15c38d31",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 5,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 5,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 195.84,
+        "base": 589.82,
+        "quantity": 1,
+        "subtotal": 785.66,
+        "total": 785.66,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 0.99,
+        "base": 57.24,
+        "quantity": 1,
+        "subtotal": 58.23,
+        "total": 58.23,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 64.87,
+        "base": 479.45,
+        "quantity": 1,
+        "subtotal": 544.32,
+        "total": 544.32,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "fef5e2a5-6c01-448c-ac4b-2860ebe7c8f6",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 5,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 7,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 219.94,
+        "base": 811.41,
+        "quantity": 1,
+        "subtotal": 1031.35,
+        "total": 1031.35,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 188.84,
+        "base": 977.27,
+        "quantity": 1,
+        "subtotal": 1166.11,
+        "total": 1166.11,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 59.62,
+        "base": 865.8,
+        "quantity": 1,
+        "subtotal": 925.42,
+        "total": 925.42,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "KL"
+  },
+  {
+    "id": "063546a4-1d7c-4181-90d6-dcf4c79fe575",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 9,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 4,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 75.16,
+        "base": 22.97,
+        "quantity": 1,
+        "subtotal": 98.13,
+        "total": 98.13,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 51.99,
+        "base": 674.58,
+        "quantity": 1,
+        "subtotal": 726.57,
+        "total": 726.57,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 195.21,
+        "base": 774.38,
+        "quantity": 1,
+        "subtotal": 969.59,
+        "total": 969.59,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AF"
+  },
+  {
+    "id": "d4523301-2e59-43f4-9ffc-37c9a959b890",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 8,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 2,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 195.3,
+        "base": 104.36,
+        "quantity": 1,
+        "subtotal": 299.66,
+        "total": 299.66,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 140.76,
+        "base": 22.26,
+        "quantity": 1,
+        "subtotal": 163.02,
+        "total": 163.02,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 78.81,
+        "base": 419.94,
+        "quantity": 1,
+        "subtotal": 498.75,
+        "total": 498.75,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "04159a04-cd33-45b4-9db0-3f106ca2862e",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 8,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 2,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 131.68,
+        "base": 665.3,
+        "quantity": 1,
+        "subtotal": 796.98,
+        "total": 796.98,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 97.94,
+        "base": 869.54,
+        "quantity": 1,
+        "subtotal": 967.48,
+        "total": 967.48,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 159.41,
+        "base": 346.42,
+        "quantity": 1,
+        "subtotal": 505.83,
+        "total": 505.83,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AF"
+  },
+  {
+    "id": "419a8df1-6333-41ef-88e0-7d3110f47da4",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 7,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 2,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 201.15,
+        "base": 630.47,
+        "quantity": 1,
+        "subtotal": 831.62,
+        "total": 831.62,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 45.61,
+        "base": 194.94,
+        "quantity": 1,
+        "subtotal": 240.55,
+        "total": 240.55,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 3.01,
+        "base": 99.29,
+        "quantity": 1,
+        "subtotal": 102.3,
+        "total": 102.3,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "DL"
+  },
+  {
+    "id": "949f6097-0d8b-40fc-bfd2-047dd5a2ea71",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 5,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 2,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 77.78,
+        "base": 683.66,
+        "quantity": 1,
+        "subtotal": 761.44,
+        "total": 761.44,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 48.01,
+        "base": 513.6,
+        "quantity": 1,
+        "subtotal": 561.61,
+        "total": 561.61,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 27.78,
+        "base": 334.47,
+        "quantity": 1,
+        "subtotal": 362.25,
+        "total": 362.25,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "FY"
+  },
+  {
+    "id": "5ab1a4b6-eff6-435d-8587-e089fc65dab0",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 3,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 9,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 131.79,
+        "base": 259.04,
+        "quantity": 1,
+        "subtotal": 390.83,
+        "total": 390.83,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 153.24,
+        "base": 879.62,
+        "quantity": 1,
+        "subtotal": 1032.86,
+        "total": 1032.86,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 153.66,
+        "base": 979.7,
+        "quantity": 1,
+        "subtotal": 1133.36,
+        "total": 1133.36,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "84cf789e-39fd-41a8-b171-dd1c9fea01a8",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 1,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 1,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 221.52,
+        "base": 544.01,
+        "quantity": 1,
+        "subtotal": 765.53,
+        "total": 765.53,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 175.01,
+        "base": 960.95,
+        "quantity": 1,
+        "subtotal": 1135.96,
+        "total": 1135.96,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 82.59,
+        "base": 345.21,
+        "quantity": 1,
+        "subtotal": 427.8,
+        "total": 427.8,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "477033ef-1660-4e04-a65e-4ed8a4444cac",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 5,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 3,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 108.98,
+        "base": 648.49,
+        "quantity": 1,
+        "subtotal": 757.47,
+        "total": 757.47,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 50.49,
+        "base": 22.34,
+        "quantity": 1,
+        "subtotal": 72.83,
+        "total": 72.83,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 57.34,
+        "base": 855.39,
+        "quantity": 1,
+        "subtotal": 912.73,
+        "total": 912.73,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "DL"
+  },
+  {
+    "id": "9f621c8e-2857-44e6-a81f-4c642ea4b718",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 3,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 7,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 112.02,
+        "base": 168.91,
+        "quantity": 1,
+        "subtotal": 280.93,
+        "total": 280.93,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 111,
+        "base": 853.45,
+        "quantity": 1,
+        "subtotal": 964.45,
+        "total": 964.45,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 24.61,
+        "base": 457.44,
+        "quantity": 1,
+        "subtotal": 482.05,
+        "total": 482.05,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AA"
+  },
+  {
+    "id": "31eba96c-b670-4d02-8378-a782ca1ec20c",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 4,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 3,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 223.45,
+        "base": 25.66,
+        "quantity": 1,
+        "subtotal": 249.11,
+        "total": 249.11,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 194.09,
+        "base": 593.09,
+        "quantity": 1,
+        "subtotal": 787.18,
+        "total": 787.18,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 182.41,
+        "base": 69.38,
+        "quantity": 1,
+        "subtotal": 251.79,
+        "total": 251.79,
+        "type": "INFANT"
+      }
+    },
+    "provider": "ALPHA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AR"
+  },
+  {
+    "id": "8fe46383-32f0-4887-8543-f0b1ec4f004b",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 3,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 7,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 177.17,
+        "base": 241.03,
+        "quantity": 1,
+        "subtotal": 418.2,
+        "total": 418.2,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 176.27,
+        "base": 792.72,
+        "quantity": 1,
+        "subtotal": 968.99,
+        "total": 968.99,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 157.53,
+        "base": 66.87,
+        "quantity": 1,
+        "subtotal": 224.4,
+        "total": 224.4,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "FY"
+  },
+  {
+    "id": "1791f83f-933d-43fa-b7fc-ae23274ea7f2",
+    "segments": [
+      {
+        "legs": [
+          {
+            "origin": "BUE",
+            "destination": "MIA",
+            "departureDate": "2021-10-29",
+            "departureTime": "06:00",
+            "arrivalDate": "2021-10-29",
+            "arrivalTime": "12:00",
+            "number": 5,
+            "flightDuration": "07:00"
+          }
+        ],
+        "flightDuration": "07:00"
+      },
+      {
+        "legs": [
+          {
+            "origin": "MIA",
+            "destination": "BUE",
+            "departureDate": "2021-11-03",
+            "departureTime": "12:00",
+            "arrivalDate": "2021-11-03",
+            "arrivalTime": "18:00",
+            "number": 5,
+            "flightDuration": "05:00"
+          }
+        ],
+        "flightDuration": "05:00"
+      }
+    ],
+    "priceInfo": {
+      "adults": {
+        "tax": 25.62,
+        "base": 276.34,
+        "quantity": 1,
+        "subtotal": 301.96,
+        "total": 301.96,
+        "type": "ADULT"
+      },
+      "children": {
+        "tax": 14.03,
+        "base": 787.92,
+        "quantity": 1,
+        "subtotal": 801.95,
+        "total": 801.95,
+        "type": "CHILD"
+      },
+      "infants": {
+        "tax": 187,
+        "base": 788.62,
+        "quantity": 1,
+        "subtotal": 975.62,
+        "total": 975.62,
+        "type": "INFANT"
+      }
+    },
+    "provider": "BETA",
+    "flightType": "ROUND_TRIP",
+    "carrier": "AR"
+  }
+]

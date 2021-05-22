@@ -1,0 +1,14 @@
+[
+  {
+    "itineraryId": "b131c0a4-0476-4cb2-88bc-54466796ad0e",
+    "adults": {
+      "markup": {
+        "percentage": 5,
+        "amount": 241.205
+      },
+      "total": 723.615
+    },
+    "children": null,
+    "infants": null
+  }
+]

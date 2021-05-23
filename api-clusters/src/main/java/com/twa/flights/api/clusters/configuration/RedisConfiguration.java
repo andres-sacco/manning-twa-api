@@ -11,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
 import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 import com.twa.flights.api.clusters.serializer.ClusterSearchSerializer;
+import com.twa.flights.api.clusters.serializer.StringSerializer;
 
 @Configuration
 @ConfigurationProperties
@@ -19,10 +20,12 @@ public class RedisConfiguration {
     private RedisSettings redis;
 
     private ClusterSearchSerializer clusterSearchSerializer;
+    private StringSerializer stringSerializer;
 
     @Autowired
-    public RedisConfiguration(ClusterSearchSerializer clusterSearchSerializer) {
+    public RedisConfiguration(ClusterSearchSerializer clusterSearchSerializer, StringSerializer stringSerializer) {
         this.clusterSearchSerializer = clusterSearchSerializer;
+        this.stringSerializer = stringSerializer;
     }
 
     @Bean
@@ -36,7 +39,7 @@ public class RedisConfiguration {
     public RedisTemplate<String, ClusterSearchDTO> redisTemplate() {
         RedisTemplate<String, ClusterSearchDTO> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
-
+        redisTemplate.setKeySerializer(stringSerializer);
         redisTemplate.setValueSerializer(clusterSearchSerializer);
 
         return redisTemplate;

@@ -65,4 +65,13 @@ services:
     container_name: api-provider-beta
     ports:
      - 9070:9070
-    restart: always      
+    restart: always
+      
+  zookeeper:
+    image:  bitnami/zookeeper:3-debian-10
+    container_name: zookeeper
+    ports:
+     - 2181:2181
+    restart: always 
+    environment:
+     - ALLOW_ANONYMOUS_LOGIN=yes    

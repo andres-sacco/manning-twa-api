@@ -14,6 +14,7 @@ import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 import com.twa.flights.api.clusters.dto.request.ClustersAvailabilityRequestDTO;
 import com.twa.flights.api.clusters.enums.ExceptionStatus;
 import com.twa.flights.api.clusters.exception.APIException;
+import com.twa.flights.api.clusters.helper.FlightIdGeneratorHelper;
 import com.twa.flights.api.clusters.repository.ClustersRepository;
 import com.twa.flights.common.dto.itinerary.ItineraryDTO;
 
@@ -25,21 +26,24 @@ public class ClustersService {
     private final ItinerariesSearchService itinerariesSearchService;
     private final PricingService pricingService;
     private final ClustersRepository repository;
+    private final FlightIdGeneratorHelper helper;
 
     @Autowired
     public ClustersService(ItinerariesSearchService itinerariesSearchService, PricingService pricingService,
-            ClustersRepository repository) {
+            ClustersRepository repository, FlightIdGeneratorHelper helper) {
         this.itinerariesSearchService = itinerariesSearchService;
         this.pricingService = pricingService;
         this.repository = repository;
+        this.helper = helper;
     }
 
     public ClusterSearchDTO availability(ClustersAvailabilityRequestDTO request) {
         LOGGER.debug("begin the search");
 
-        ClusterSearchDTO response = null;
-
-        if (StringUtils.isEmpty(request.getId())) { // New search
+        ClusterSearchDTO response = repository.get(helper.generate(request));
+        if (response != null) {
+        	response.setItineraries(response.getItineraries().stream().limit(request.getAmount()).collect(Collectors.toList()));
+        } else if (StringUtils.isEmpty(request.getId())) { // New search
             response = availabilityFromProviders(request);
         } else { // Pagination old search
             response = availabilityFromDatabase(request);

@@ -50,4 +50,10 @@ connector:
       host: localhost:7070
       responseTimeout: 10000
       connectionTimeout: 10000
-      readTimeout: 10000         
+      readTimeout: 10000  
+
+zookeeper:
+   host: localhost:2181
+   maxRetries: 2
+   timeBetweenRetries: 100
+   connectionTimeout: 1000

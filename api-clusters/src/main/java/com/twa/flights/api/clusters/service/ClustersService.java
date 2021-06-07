@@ -1,6 +1,7 @@
 package com.twa.flights.api.clusters.service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -27,14 +28,16 @@ public class ClustersService {
     private final PricingService pricingService;
     private final ClustersRepository repository;
     private final FlightIdGeneratorHelper helper;
+    private final ZooKeeperService zkService;
 
     @Autowired
     public ClustersService(ItinerariesSearchService itinerariesSearchService, PricingService pricingService,
-            ClustersRepository repository, FlightIdGeneratorHelper helper) {
+            ClustersRepository repository, FlightIdGeneratorHelper helper, ZooKeeperService zkService) {
         this.itinerariesSearchService = itinerariesSearchService;
         this.pricingService = pricingService;
         this.repository = repository;
         this.helper = helper;
+        this.zkService = zkService;
     }
 
     public ClusterSearchDTO availability(ClustersAvailabilityRequestDTO request) {
@@ -44,7 +47,7 @@ public class ClustersService {
         if (response != null) {
         	response.setItineraries(response.getItineraries().stream().limit(request.getAmount()).collect(Collectors.toList()));
         } else if (StringUtils.isEmpty(request.getId())) { // New search
-            response = availabilityFromProviders(request);
+            response = availabilityFromBarrierOrProvider(request);
         } else { // Pagination old search
             response = availabilityFromDatabase(request);
         }
@@ -86,6 +89,24 @@ public class ClustersService {
         response.setItineraries(
                 itineraries.stream().skip(skip).limit(request.getAmount()).collect(Collectors.toList()));
         return response;
+    }
+    
+    private String buildBarrierPath(ClustersAvailabilityRequestDTO request) {
+    	return "/barrier/" + helper.generate(request);
+    }
+    
+    private synchronized boolean isBarrierCreated(String barrierName) {
+    	return zkService.checkIfBarrierExists(barrierName) || zkService.createBarrier(barrierName);
+    }
+    
+    private ClusterSearchDTO availabilityFromBarrierOrProvider(ClustersAvailabilityRequestDTO request) {
+    	String barrierName = buildBarrierPath(request);
+    	if(isBarrierCreated(barrierName)) {
+    		zkService.waitOnBarrier(barrierName);
+    		return repository.get(helper.generate(request));
+    	} else {
+    		return availabilityFromProviders(request);
+    	}
     }
 
 }

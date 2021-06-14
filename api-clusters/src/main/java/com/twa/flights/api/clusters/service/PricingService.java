@@ -1,5 +1,6 @@
 package com.twa.flights.api.clusters.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Service;
 import com.twa.flights.api.clusters.connector.PricingConnector;
 import com.twa.flights.api.clusters.dto.UpdatedPriceInfoDTO;
 import com.twa.flights.common.dto.itinerary.ItineraryDTO;
+import com.twa.flights.common.dto.itinerary.MarkupDTO;
 import com.twa.flights.common.dto.itinerary.PriceInfoDTO;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @Service
 public class PricingService {
@@ -26,6 +30,7 @@ public class PricingService {
         this.pricingConnector = pricingConnector;
     }
 
+    @CircuitBreaker(name = "pricingService", fallbackMethod = "fallbackPriceItineraries")
     public List<ItineraryDTO> priceItineraries(List<ItineraryDTO> itineraries) {
         LOGGER.debug("Pricing itineraries");
 
@@ -58,5 +63,12 @@ public class PricingService {
             priceInfo.getInfants().setMarkup(updatedPriceInfo.getInfants().getMarkup());
             priceInfo.getInfants().setTotal(updatedPriceInfo.getInfants().getTotal());
         }
+    }
+
+    private List<ItineraryDTO> fallbackPriceItineraries(List<ItineraryDTO> itineraries, RuntimeException re) {
+        itineraries.stream().forEach(
+                iti -> iti.getPriceInfo().getAdults().setMarkup(new MarkupDTO(BigDecimal.ZERO, BigDecimal.ZERO)));
+
+        return itineraries.stream().collect(Collectors.toList());
     }
 }

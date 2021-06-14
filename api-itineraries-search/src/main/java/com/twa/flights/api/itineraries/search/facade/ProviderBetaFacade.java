@@ -12,6 +12,8 @@ import com.twa.flights.common.dto.enums.Provider;
 import com.twa.flights.common.dto.itinerary.ItineraryDTO;
 import com.twa.flights.common.dto.request.AvailabilityRequestDTO;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @Component
 public class ProviderBetaFacade implements ProviderFacade {
 
@@ -24,6 +26,7 @@ public class ProviderBetaFacade implements ProviderFacade {
         this.providerBetaConnector = providerBetaConnector;
     }
 
+    @CircuitBreaker(name = "betaService")
     public List<ItineraryDTO> availability(AvailabilityRequestDTO request) {
         LOGGER.debug("Obtain the information about the flights");
         return providerBetaConnector.availability(request);

@@ -50,4 +50,18 @@ connector:
       host: api-itineraries-search:7070
       responseTimeout: 10000
       connectionTimeout: 10000
-      readTimeout: 10000         
+      readTimeout: 10000  
+
+resilience4j.circuitbreaker:
+  instances:
+    pricingService:
+      registerHealthIndicator: true
+      ringBufferSizeInClosedState: 5
+      ringBufferSizeInHalfOpenState: 3
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 2
+      recordExceptions:
+       - org.springframework.web.client.HttpServerErrorException
+       - java.io.IOException
+       - io.netty.handler.timeout.ReadTimeoutException
+       - java.util.concurrent.TimeoutException       

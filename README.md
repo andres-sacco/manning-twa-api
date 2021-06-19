@@ -10,6 +10,7 @@ The following are the most important topics in this file:
 - [Requirements](#Requirements)
 - [Architecture](#Architecture)
   - [Microservices](#Microservices)
+  - [Layers](#Layers)  
   - [Model](#Model)
   - [Flow](#Flow)
   - [Technologies](#Technologies)
@@ -41,6 +42,28 @@ The system comprises the following microservices:
 
 The following picture illustrates the architecture described above.
 ![Architecture](.images/Microservices-Architecture.png)
+
+### Layers
+
+All the microservices are split in different layers which only have access to others layers. The following figure show you the common structure in all the microservices:
+
+![Layers](.images/Microservices-Layers.png)
+
+Now, a little about what contain each layer:
+
+| Layer         | Description                                                                                                             | Packages                                              |
+|---------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| Controllers   | Contain all the endpoints and the documentation about the microservices                                                 | *.controller and *.controller.documentation           |
+| Services      | Contain all the definition of the services and the implementation                                                       | *.service and *.service.impl                          |
+| Validators    | Contain all the logic to validate a Request of a DTO                                                                    | *.validator                                           |
+| Repositories  | This layer contain the definition using interfaces and in some cases contain the specification to do a particular query | *.repository, *.repository.impl, and *.specification  |
+| Connectors    | Inside this layer there are all the configurations and the endpoints to communicate with external services.             | *.connector and *.connector.configuration             |
+| Helpers       | All the classes that help in different things in the entire microservices (e.g calculate the duration of a flight)      | *.helper                                              |
+| Configuration | All the logic to configure different aspects of the microservices (e.g format of the response, ports)                   | *.configuration                                       |
+| Exceptions    | Contain all the exceptions that each microservice can throw during the execution of a request                           | *.exception                                           |
+| Model         | This particular layer contain all the entities which access to the databases                                            | *.model                                               |
+| Enums/DTO     | In this layer you can find the classes and the enum that are using across the different layers                          | *.enums and *.dto                                     |
+
 
 #### Model
 

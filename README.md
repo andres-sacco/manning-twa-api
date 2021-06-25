@@ -14,6 +14,7 @@ The following are the most important topics in this file:
   - [Model](#Model)
   - [Flow](#Flow)
   - [Technologies](#Technologies)
+  - [Internal libraries](#internal-libraries)
 - [Run the APIs](#run-the-apis)
 - [Documentation of APIs](#documentation-of-apis)
 - [Considerations](#Considerations)
@@ -104,6 +105,12 @@ The microservices use some frameworks/libraries:
 - **[chaos-monkey](https://codecentric.github.io/chaos-monkey-spring-boot/)** is a library that simulate random problems in the microservices following the principles of **[Chaos Engineering](https://www.gremlin.com/community/tutorials/chaos-engineering-the-history-principles-and-practice/)** like latency, exceptions. The idea to use this tool is to help to the developers to simulate random problems in the different microservices in a simple way.
 - **[orika](https://orika-mapper.github.io/orika-docs/)** is a library that helps to map the values from one object to another.
 - **[snakeyaml](https://bitbucket.org/asomov/snakeyaml/src/master/)** is a library to use YML files as resources in the different microservices.
+
+#### Internal libraries
+
+All the microservices have dependencies of internal libraries which reduce the number of line of code duplicated. If you want more information about each of them you can access to the repositories and download the code.
+- **[flights-common-dto](https://github.com/andres-sacco/manning-twa-libs-dto)** is a library which contain all the domain model.
+- **[flights-parent](https://github.com/andres-sacco/manning-twa-lib-parent)** is a library which contain all the configuration related with the plugins and some common properties.
 
 ## Run the APIs
 

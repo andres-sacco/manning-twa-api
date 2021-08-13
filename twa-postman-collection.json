@@ -15,7 +15,7 @@
 					"name": "Search",
 					"request": {
 						"url": {
-							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-05-29,2021-06-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -84,7 +84,7 @@
 					"name": "Search next page",
 					"request": {
 						"url": {
-							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-05-29,2021-06-03&adults=1&children=1&infants=1&amount=10&id=TWA_g=2021-03-05T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-05-29,2021-06-03_a=1_c=1_i=1&offset=1",
+							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10&id=TWA_g=2021-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-11-29,2021-12-03_a=1_c=1_i=1&offset=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -111,7 +111,7 @@
 								},
 								{
 									"key": "departure",
-									"value": "2021-05-29,2021-06-03",
+									"value": "2021-11-29,2021-12-03",
 									"equals": true,
 									"description": ""
 								},
@@ -141,7 +141,7 @@
 								},
 								{
 									"key": "id",
-									"value": "TWA_g=2021-03-05T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-05-29,2021-06-03_a=1_c=1_i=1",
+									"value": "TWA_g=2021-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-11-29,2021-12-03_a=1_c=1_i=1",
 									"equals": true,
 									"description": ""
 								},
@@ -253,7 +253,7 @@
 					"name": "Search",
 					"request": {
 						"url": {
-							"raw": "http://localhost:7070/api/flights/itineraries-search/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-05-29,2021-06-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:7070/api/flights/itineraries-search/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,7 +280,7 @@
 								},
 								{
 									"key": "departure",
-									"value": "2021-05-29,2021-06-03",
+									"value": "2021-11-29,2021-12-03",
 									"equals": true,
 									"description": ""
 								},
@@ -342,7 +342,7 @@
 					"name": "Search",
 					"request": {
 						"url": {
-							"raw": "http://localhost:8070/api/flights/provider/alpha/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-05-29,2021-06-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:8070/api/flights/provider/alpha/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -370,7 +370,7 @@
 								},
 								{
 									"key": "departure",
-									"value": "2021-05-29,2021-06-03",
+									"value": "2021-11-29,2021-12-03",
 									"equals": true,
 									"description": ""
 								},
@@ -432,7 +432,7 @@
 					"name": "Search",
 					"request": {
 						"url": {
-							"raw": "http://localhost:9070/api/flights/provider/beta/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-05-29,2021-06-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:9070/api/flights/provider/beta/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -460,7 +460,7 @@
 								},
 								{
 									"key": "departure",
-									"value": "2021-05-29,2021-06-03",
+									"value": "2021-11-29,2021-12-03",
 									"equals": true,
 									"description": ""
 								},

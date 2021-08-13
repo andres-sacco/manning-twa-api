@@ -180,11 +180,11 @@
 		</plugins>
 	</build>
 	<repositories>
-	    <repository>
-	        <id>central</id>
-	        <name>a0lx370ow2mnw-artifactory-primary-0-releases</name>
-	        <url>https://manning.jfrog.io/artifactory/manning-twa</url>
-	    </repository>
+		<repository>
+			<id>manning-twa-lib-parent</id>
+			<name>Repository of custom objects</name>
+			<url>https://mymavenrepo.com/repo/tJqfV65wRD0LL9UcK4CQ</url>
+		</repository>
 		<repository>
 			<id>maven2</id>
 			<name>maven2</name>

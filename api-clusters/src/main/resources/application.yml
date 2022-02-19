@@ -50,4 +50,8 @@ connector:
       host: localhost:7070
       responseTimeout: 10000
       connectionTimeout: 10000
-      readTimeout: 10000         
+      readTimeout: 10000
+
+cache:
+  maximumSize: 1000
+  duration: 60

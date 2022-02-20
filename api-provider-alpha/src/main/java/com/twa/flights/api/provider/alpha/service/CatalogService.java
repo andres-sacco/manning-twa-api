@@ -1,12 +1,12 @@
 package com.twa.flights.api.provider.alpha.service;
 
+import com.twa.flights.api.provider.alpha.connector.CatalogConnector;
+import com.twa.flights.api.provider.alpha.dto.CityDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import com.twa.flights.api.provider.alpha.connector.CatalogConnector;
-import com.twa.flights.api.provider.alpha.dto.CityDTO;
 
 @Service
 public class CatalogService {
@@ -20,6 +20,7 @@ public class CatalogService {
         this.catalogConnector = catalogConnector;
     }
 
+    @Cacheable("cities")
     public CityDTO getCity(String code) {
         LOGGER.debug("Obtain the information for code: {}", code);
         return catalogConnector.getCityByCode(code);

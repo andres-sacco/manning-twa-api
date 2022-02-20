@@ -1,4 +1,4 @@
-package com.twa.flights.api.clusters.configuration;
+package com.twa.flights.api.provider.alpha.configuration;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

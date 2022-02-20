@@ -33,7 +33,7 @@ spring:
         
 connector:
    catalog:
-      host: api-catalog:6070
+      host: varnish:80
       responseTimeout: 1000
       connectionTimeout: 1000
       readTimeout: 1000

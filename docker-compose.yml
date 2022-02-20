@@ -65,4 +65,12 @@ services:
     container_name: api-provider-beta
     ports:
      - 9070:9070
-    restart: always      
+    restart: always
+
+  varnish:
+    build: ./varnish
+    container_name: varnish
+    ports:
+      - 80:80
+    depends_on:
+      - api-catalog

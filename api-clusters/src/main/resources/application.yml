@@ -53,5 +53,5 @@ connector:
       readTimeout: 10000
 
 cache:
-  maximumSize: 1000
+  maximumSize: 100
   duration: 60

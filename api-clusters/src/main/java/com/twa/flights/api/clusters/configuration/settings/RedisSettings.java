@@ -1,27 +1,25 @@
 package com.twa.flights.api.clusters.configuration.settings;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 @ConfigurationProperties(prefix = "redis")
+@ConstructorBinding
 public class RedisSettings {
 
-    private String host;
-    private int port;
+    private final String host;
+    private final int port;
+
+    public RedisSettings(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
 
     public String getHost() {
         return host;
     }
 
-    public void setHost(String host) {
-        this.host = host;
-    }
-
     public int getPort() {
         return port;
     }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
 }

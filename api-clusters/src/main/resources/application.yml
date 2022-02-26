@@ -48,6 +48,9 @@ connector:
       connectionTimeout: 10000
       readTimeout: 10000
 
+cache:
+  expireAfterWriteTime: 1
+
 redis:
   host: localhost
   port: 5079

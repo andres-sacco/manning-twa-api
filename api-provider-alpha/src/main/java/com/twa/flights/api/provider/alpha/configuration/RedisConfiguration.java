@@ -1,8 +1,7 @@
-package com.twa.flights.api.clusters.configuration;
+package com.twa.flights.api.provider.alpha.configuration;
 
-import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
-import com.twa.flights.api.clusters.dto.CityDTO;
-import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.provider.alpha.configuration.settings.RedisSettings;
+import com.twa.flights.api.provider.alpha.dto.CityDTO;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,17 +26,9 @@ public class RedisConfiguration {
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
-    @Bean(name = "redisTemplate")
+    @Bean
     public RedisTemplate<String, CityDTO> redisTemplate() {
         var redisTemplate = new RedisTemplate<String, CityDTO>();
-        redisTemplate.setConnectionFactory(jedisConnectionFactory());
-
-        return redisTemplate;
-    }
-
-    @Bean(name = "clusterSearchDTORedisTemplate")
-    public RedisTemplate<String, ClusterSearchDTO> clusterSearchDTORedisTemplate() {
-        var redisTemplate = new RedisTemplate<String, ClusterSearchDTO>();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
 
         return redisTemplate;

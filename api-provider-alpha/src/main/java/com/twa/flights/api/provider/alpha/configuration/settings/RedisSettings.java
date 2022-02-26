@@ -1,4 +1,4 @@
-package com.twa.flights.api.clusters.configuration.settings;
+package com.twa.flights.api.provider.alpha.configuration.settings;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;

@@ -39,5 +39,8 @@ connector:
       readTimeout: 1000
 
 cache:
-  maximumSize: 100
-  duration: 60
+  expireAfterWriteTime: 1
+
+redis:
+  host: localhost
+  port: 5079

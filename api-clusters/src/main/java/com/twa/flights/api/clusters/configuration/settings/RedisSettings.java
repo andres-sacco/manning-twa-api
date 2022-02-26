@@ -1,5 +1,8 @@
 package com.twa.flights.api.clusters.configuration.settings;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties(prefix = "redis")
 public class RedisSettings {
 
     private String host;

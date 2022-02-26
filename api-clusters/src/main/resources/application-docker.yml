@@ -30,10 +30,6 @@ chaos:
 spring:
   profiles:
     active: default
-         
-redis:
-   host: api-clusters-db
-   port: 6379    
 
 connector:
    catalog:
@@ -55,3 +51,7 @@ connector:
 cache:
   maximumSize: 1000
   duration: 60
+
+redis:
+  host: api-clusters-remote-cache
+  port: 6379

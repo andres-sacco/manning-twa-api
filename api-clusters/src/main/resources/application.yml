@@ -31,10 +31,6 @@ spring:
   profiles:
     active: default
     
-redis:
-   host: localhost
-   port: 6079
-    
 connector:
    catalog:
       host: localhost:6070
@@ -55,3 +51,7 @@ connector:
 cache:
   maximumSize: 100
   duration: 60
+
+redis:
+  host: localhost
+  port: 5079

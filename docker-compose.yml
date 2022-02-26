@@ -74,3 +74,9 @@ services:
       - 80:80
     depends_on:
       - api-catalog
+
+  redis:
+    build: ./redis
+    container_name: api-clusters-remote-cache
+    ports:
+      - 5079:6379

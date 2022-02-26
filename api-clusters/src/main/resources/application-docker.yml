@@ -48,10 +48,6 @@ connector:
       connectionTimeout: 10000
       readTimeout: 10000
 
-cache:
-  maximumSize: 1000
-  duration: 60
-
 redis:
   host: api-clusters-remote-cache
   port: 6379

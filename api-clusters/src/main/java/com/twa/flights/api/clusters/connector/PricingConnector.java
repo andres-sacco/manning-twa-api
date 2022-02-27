@@ -31,6 +31,8 @@ public class PricingConnector {
 
     private static final String ITINERARIES = "/api/flights/pricing/itineraries";
 
+    public static final String GZIP = "gzip";
+
     private final PricingConnectorConfiguration configuration;
 
     @Autowired
@@ -44,12 +46,13 @@ public class PricingConnector {
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, Math.toIntExact(configuration.getConnectionTimeout()))
                 .responseTimeout(Duration.ofMillis(configuration.getResponseTimeout()))
-                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)));
+                .doOnConnected(conn -> conn.addHandlerLast(new ReadTimeoutHandler(readTimeout, TimeUnit.MILLISECONDS)))
+                .compress(true);
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
-        WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+        WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE,
+                HttpHeaders.ACCEPT_ENCODING, GZIP).clientConnector(connector).build();
 
         return client.post().uri(configuration.getHost().concat(ITINERARIES)).bodyValue(itineraries).retrieve()
                 .onStatus(HttpStatus::isError, clientResponse -> {

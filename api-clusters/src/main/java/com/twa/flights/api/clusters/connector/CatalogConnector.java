@@ -1,8 +1,10 @@
 package com.twa.flights.api.clusters.connector;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import com.twa.flights.api.clusters.connector.filter.ConnectorFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +51,11 @@ public class CatalogConnector {
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
-        WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE,
-                HttpHeaders.ACCEPT_ENCODING, GZIP).clientConnector(connector).build();
+        WebClient client = WebClient.builder()
+                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE, HttpHeaders.ACCEPT_ENCODING,
+                        GZIP)
+                .filter(ConnectorFilter.logRequest()).filter(ConnectorFilter.logResponse()).clientConnector(connector)
+                .build();
 
         return client.get().uri(configuration.getHost().concat(GET_CITY_BY_CODE).concat(code)).retrieve()
                 .onStatus(HttpStatus::isError, clientResponse -> {

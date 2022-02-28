@@ -10,6 +10,9 @@ server:
   port: 4070
   servlet:
     context-path: /api/flights/clusters
+  compression:
+    enabled: true
+    mime-types: application/json
 
 jetty:
   threadPool:

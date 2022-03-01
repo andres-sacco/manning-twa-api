@@ -25,6 +25,8 @@ public interface GzipCompressor {
       try (var baos = new ByteArrayOutputStream();
            var gos = new GZIPOutputStream(baos);) {
          gos.write(str.getBytes(StandardCharsets.UTF_8));
+         gos.close();
+
          var base64Encoded = Base64.getEncoder().encodeToString(baos.toByteArray());
          LOGGER.debug(format("Compressed String length : %s", base64Encoded.length()));
 
@@ -38,11 +40,10 @@ public interface GzipCompressor {
       try (var gis = new GZIPInputStream(new ByteArrayInputStream(Base64.getDecoder().decode(str)));
            var bf = new BufferedReader(new InputStreamReader(gis, StandardCharsets.UTF_8));) {
          var outStr = new StringBuilder();
-         var line = "";
+         String line = null;
          while ((line = bf.readLine()) != null) {
             outStr.append(line);
          }
-
          LOGGER.debug(format("Decompressed String length : %s", outStr.length()));
 
          return outStr.toString();

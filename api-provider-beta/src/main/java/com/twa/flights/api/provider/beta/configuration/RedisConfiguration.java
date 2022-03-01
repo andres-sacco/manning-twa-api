@@ -2,6 +2,8 @@ package com.twa.flights.api.provider.beta.configuration;
 
 import com.twa.flights.api.provider.beta.configuration.settings.RedisSettings;
 import com.twa.flights.api.provider.beta.dto.CityDTO;
+import com.twa.flights.api.provider.beta.serializer.CitySerializer;
+import com.twa.flights.api.provider.beta.serializer.StringSerializer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,25 +15,27 @@ import org.springframework.data.redis.core.RedisTemplate;
 @EnableConfigurationProperties(RedisSettings.class)
 public class RedisConfiguration {
 
-    private RedisSettings redis;
+   private RedisSettings redis;
 
-    public RedisConfiguration(RedisSettings redis) {
-        this.redis = redis;
-    }
+   public RedisConfiguration(RedisSettings redis) {
+      this.redis = redis;
+   }
 
-    @Bean
-    public JedisConnectionFactory jedisConnectionFactory() {
-        var redisStandaloneConfiguration = new RedisStandaloneConfiguration(redis.getHost(), redis.getPort());
+   @Bean
+   public JedisConnectionFactory jedisConnectionFactory() {
+      var redisStandaloneConfiguration = new RedisStandaloneConfiguration(redis.getHost(), redis.getPort());
 
-        return new JedisConnectionFactory(redisStandaloneConfiguration);
-    }
+      return new JedisConnectionFactory(redisStandaloneConfiguration);
+   }
 
-    @Bean
-    public RedisTemplate<String, CityDTO> redisTemplate() {
-        var redisTemplate = new RedisTemplate<String, CityDTO>();
-        redisTemplate.setConnectionFactory(jedisConnectionFactory());
+   @Bean
+   public RedisTemplate<String, CityDTO> redisTemplate() {
+      var redisTemplate = new RedisTemplate<String, CityDTO>();
+      redisTemplate.setConnectionFactory(jedisConnectionFactory());
+      redisTemplate.setKeySerializer(new StringSerializer());
+      redisTemplate.setValueSerializer(new CitySerializer());
 
-        return redisTemplate;
-    }
+      return redisTemplate;
+   }
 
 }

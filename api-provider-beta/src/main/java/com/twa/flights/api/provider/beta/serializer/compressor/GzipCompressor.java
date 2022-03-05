@@ -1,6 +1,5 @@
 package com.twa.flights.api.provider.beta.serializer.compressor;
 
-import com.twa.flights.api.provider.beta.connector.filter.CompressionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

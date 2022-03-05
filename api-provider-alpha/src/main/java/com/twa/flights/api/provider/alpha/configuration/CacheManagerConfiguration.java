@@ -3,6 +3,7 @@ package com.twa.flights.api.provider.alpha.configuration;
 import com.google.common.collect.Lists;
 import com.twa.flights.api.provider.alpha.configuration.settings.CacheSettings;
 import com.twa.flights.api.provider.alpha.serializer.CitySerializer;
+import com.twa.flights.api.provider.alpha.serializer.StringSerializer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -13,7 +14,6 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
@@ -37,7 +37,7 @@ public class CacheManagerConfiguration {
 
     @Bean
     public CacheManager cacheManager() {
-        SimpleCacheManager simpleCacheManager = new SimpleCacheManager();
+        var simpleCacheManager = new SimpleCacheManager();
         simpleCacheManager.setCaches(Lists.newArrayList(RedisCacheManager.builder(jedisConnectionFactory)
                 .cacheDefaults(redisCacheConfiguration()).build().getCache(CATALOG_CITY)));
 
@@ -47,7 +47,7 @@ public class CacheManagerConfiguration {
     private RedisCacheConfiguration redisCacheConfiguration() {
         return RedisCacheConfiguration.defaultCacheConfig()
                 .serializeKeysWith(
-                        RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                        RedisSerializationContext.SerializationPair.fromSerializer(new StringSerializer()))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(citySerializer))
                 .entryTtl(Duration.ofMinutes(cacheSettings.getExpireAfterWriteTime()));
     }

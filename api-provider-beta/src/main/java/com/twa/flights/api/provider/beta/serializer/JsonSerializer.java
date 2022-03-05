@@ -5,10 +5,11 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.twa.flights.api.provider.beta.serializer.compressor.GzipCompressor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class JsonSerializer {
 
@@ -26,26 +27,32 @@ public class JsonSerializer {
     }
 
     public static byte[] serialize(Object object) {
-        byte[] compressedJson = null;
+        byte[] serializedObject = null;
+
         try {
-            compressedJson = OBJECT_MAPPER.writeValueAsString(object).getBytes();
-        } catch (IOException e) {
+            var jsonObject = OBJECT_MAPPER.writeValueAsString(object);
+            var compressedJsonObject = GzipCompressor.compress(jsonObject);
+            serializedObject = compressedJsonObject.getBytes();
+        } catch (Exception e) {
             LOGGER.error("Error serializing object: {}", e.getMessage());
         }
-        return compressedJson;
+
+        return serializedObject;
     }
 
     public static <T> T deserialize(byte[] raw, Class<T> reference) {
         if (raw == null)
             return null;
 
-        T object = null;
+        T deserializedObject = null;
         try {
-            object = OBJECT_MAPPER.readValue(raw, reference);
-        } catch (IOException e) {
+            var rawString = new String(raw, StandardCharsets.UTF_8);
+            var compressedJsonObject = GzipCompressor.decompress(rawString);
+            deserializedObject = OBJECT_MAPPER.readValue(compressedJsonObject, reference);
+        } catch (Exception e) {
             LOGGER.error("Can't deserialize object: {}", e.getMessage());
         }
-        return object;
+        return deserializedObject;
     }
 
 }

@@ -3,6 +3,8 @@ package com.twa.flights.api.clusters.configuration;
 import com.twa.flights.api.clusters.configuration.settings.RedisSettings;
 import com.twa.flights.api.clusters.dto.CityDTO;
 import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
+import com.twa.flights.api.clusters.serializer.CitySerializer;
+import com.twa.flights.api.clusters.serializer.StringSerializer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,6 +41,9 @@ public class RedisConfiguration {
     public RedisTemplate<String, ClusterSearchDTO> clusterSearchDTORedisTemplate() {
         var redisTemplate = new RedisTemplate<String, ClusterSearchDTO>();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
+        redisTemplate.setKeySerializer(new StringSerializer());
+        redisTemplate.setValueSerializer(new CitySerializer());
+
 
         return redisTemplate;
     }

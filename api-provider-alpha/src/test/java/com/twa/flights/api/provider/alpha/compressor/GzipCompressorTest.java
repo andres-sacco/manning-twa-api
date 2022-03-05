@@ -7,29 +7,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GzipCompressorTest {
 
-   @Test
-   void givenPayloadWhenCompressionIsAppliedPayloadShouldBeCompressed() throws Exception {
-      // Arrange
-      var payload = "Decompressed payload";
-      var compressedPayload = "H4sIAAAAAAAAAHNJTc7PLShKLS5OTVEoSKzMyU9MAQAtEgWTFAAAAA==";
+    public static final String COMPRESSED_PAYLOAD = "H4sIAAAAAAAAAHNJTc7PLShKLS5OTVEoSKzMyU9MAQAtEgWTFAAAAA==";
+    public static final String DECOMPRESSED_PAYLOAD = "Decompressed payload";
 
-      // Act
-      var result = GzipCompressor.compress(payload);
+    @Test
+    void givenPayloadWhenCompressionIsAppliedPayloadShouldBeCompressed() throws Exception {
+        // Act
+        var result = GzipCompressor.compress(DECOMPRESSED_PAYLOAD);
 
-      // Assert
-      assertEquals(compressedPayload, result);
-   }
+        // Assert
+        assertEquals(COMPRESSED_PAYLOAD, result);
+    }
 
-   @Test
-   void givenCompressedPayloadWhenDecompressionIsAppliedPayloadShouldBeDecompressed() throws Exception {
-      // Arrange
-      var compressedPayload = "H4sIAAAAAAAAAHNJTc7PLShKLS5OTVEoSKzMyU9MAQAtEgWTFAAAAA==";
-      var decompressedPayload = "Decompressed payload";
+    @Test
+    void givenCompressedPayloadWhenDecompressionIsAppliedPayloadShouldBeDecompressed() throws Exception {
+        // Act
+        var result = GzipCompressor.decompress(COMPRESSED_PAYLOAD);
 
-      // Act
-      var result = GzipCompressor.decompress(compressedPayload);
-
-      // Assert
-      assertEquals(decompressedPayload, result);
-   }
+        // Assert
+        assertEquals(DECOMPRESSED_PAYLOAD, result);
+    }
 }

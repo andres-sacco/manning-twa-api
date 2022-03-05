@@ -52,8 +52,9 @@ public class ItinerariesSearchConnector {
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
-        WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE,
-                HttpHeaders.ACCEPT_ENCODING, GZIP)
+        WebClient client = WebClient.builder()
+                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE, HttpHeaders.ACCEPT_ENCODING,
+                        GZIP)
                 .filter(ConnectorFilter.logRequest()).filter(ConnectorFilter.logResponse()).clientConnector(connector)
                 .clientConnector(connector).build();
 

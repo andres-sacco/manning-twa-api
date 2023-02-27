@@ -15,21 +15,10 @@ jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
-    
-chaos:
-  monkey:
-    enabled: false
-    watcher:
-      restController: true
-    assaults:
-      exceptionsActive: true
-      latencyActive: true   
-      latencyRangeStart: 3000
-      latencyRangeEnd: 10000   
-      
+
 spring:
   profiles:
-    active: chaos-monkey
+    active: default
     
 connector:
    catalog:

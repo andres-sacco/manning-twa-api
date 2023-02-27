@@ -64,11 +64,10 @@ public class ClustersService {
     }
 
     private ClusterSearchDTO availabilityFromDatabase(ClustersAvailabilityRequestDTO request) {
-        ClusterSearchDTO response;
-        response = repository.get(request.getId());
+        ClusterSearchDTO response = repository.get(request.getId());
 
         if (response == null) {
-            throw new APIException(HttpStatus.BAD_GATEWAY, ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
+            throw new APIException(HttpStatus.NOT_FOUND, ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
                     ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getMessage());
         }
 
@@ -82,6 +81,22 @@ public class ClustersService {
         response.setItineraries(
                 itineraries.stream().skip(skip).limit(request.getAmount()).collect(Collectors.toList()));
         return response;
+    }
+
+    public ItineraryDTO getItinerary(String id, String itineraryId) {
+
+        ClusterSearchDTO clusterSearch = repository.get(id);
+
+        if (clusterSearch == null) {
+            throw new APIException(HttpStatus.NOT_FOUND, ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
+                    ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getMessage());
+        }
+
+        return clusterSearch.getItineraries().stream().filter(itinerary -> itineraryId.equals(itinerary.getId()))
+                .findAny()
+                .orElseThrow(() -> new APIException(HttpStatus.NOT_FOUND,
+                        ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getCode(),
+                        ExceptionStatus.SEARCH_NOT_FOUND_IN_REPOSITORY.getMessage()));
     }
 
 }

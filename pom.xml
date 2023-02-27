@@ -29,9 +29,32 @@
 	</modules>
 
 	<properties>
-		<sonar.projectKey>andres-sacco_manning-twa-api</sonar.projectKey>
-		<sonar.organization>adschosen-github</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	</properties>
+        <git-changelog-maven-plugin.version>1.78</git-changelog-maven-plugin.version>
+        <git-build-hook-maven-plugin.version>3.0.0</git-build-hook-maven-plugin.version>
+    </properties>
 
+    <build>
+        <plugins>
+            <!-- Changelog generator -->
+            <plugin>
+                <groupId>se.bjurr.gitchangelog</groupId>
+                <artifactId>git-changelog-maven-plugin</artifactId>
+                <version>${git-changelog-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>GenerateGitChangelog</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>git-changelog</goal>
+                        </goals>
+                        <configuration>
+                            <file>CHANGELOG.md</file>
+                            <toRef>main</toRef>
+                            <templateFile>changelogTemplate.mustache</templateFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

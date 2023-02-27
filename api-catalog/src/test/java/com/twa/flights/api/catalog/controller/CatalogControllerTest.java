@@ -14,27 +14,30 @@ import org.springframework.http.ResponseEntity;
 
 import com.twa.flights.api.catalog.dto.CityDTO;
 import com.twa.flights.api.catalog.service.CityService;
+import com.twa.flights.api.catalog.service.CountryService;
 
 @ExtendWith(MockitoExtension.class)
 public class CatalogControllerTest {
 
     private static final String DEFAULT_CITY_CODE = "BUE";
 
-    private CityService entityService;
+    private CityService cityService;
+    private CountryService countryService;
     private CatalogController controller;
 
     @BeforeEach
     public void setUp() {
-        entityService = mock(CityService.class);
-        controller = new CatalogController(entityService);
+        cityService = mock(CityService.class);
+        countryService = mock(CountryService.class);
+        controller = new CatalogController(cityService, countryService);
     }
 
     @Test
-    public void should_return_an_city() {
+    void should_return_an_city() {
         CityDTO city = new CityDTO();
         city.setCode(DEFAULT_CITY_CODE);
 
-        when(entityService.getCityByCode(DEFAULT_CITY_CODE)).thenReturn(city);
+        when(cityService.getCityByCode(DEFAULT_CITY_CODE)).thenReturn(city);
         ResponseEntity<CityDTO> response = controller.getCityByCode(DEFAULT_CITY_CODE);
 
         assertAll(() -> assertNotNull(response), () -> assertEquals(200, response.getStatusCodeValue()),

@@ -13,6 +13,7 @@ import com.twa.flights.api.clusters.dto.ClusterSearchDTO;
 import com.twa.flights.api.clusters.dto.request.ClustersAvailabilityRequestDTO;
 import com.twa.flights.api.clusters.service.ClustersService;
 import com.twa.flights.api.clusters.validator.AvailabilityRequestValidator;
+import com.twa.flights.common.dto.itinerary.ItineraryDTO;
 
 @RestController
 @RequestMapping("/")
@@ -36,6 +37,15 @@ public class ClustersController implements ClustersResources {
         requestValidator.validate(request);
 
         ClusterSearchDTO response = clustersService.availability(request);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<ItineraryDTO> getItinerary(String id, String itineraryId) {
+        LOGGER.debug("Obtain all the itineraries with price");
+
+        ItineraryDTO response = clustersService.getItinerary(id, itineraryId);
+
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

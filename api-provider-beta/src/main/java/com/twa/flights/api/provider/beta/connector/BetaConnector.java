@@ -61,20 +61,22 @@ public class BetaConnector {
 
         String[] departureDate = availabilityRequest.getDeparture().split(",");
         String[] origin = availabilityRequest.getFrom().split(",");
+        String[] destination = availabilityRequest.getTo().split(",");
 
-        createSegmentOrigin(faker, segments, departureDate, origin);
+        createSegmentOrigin(faker, segments, departureDate, origin, destination);
 
         if (departureDate.length > 1) {
-            createSegmentReturn(faker, segments, departureDate, origin);
+            createSegmentReturn(faker, segments, departureDate, origin, destination);
         }
 
         return segments;
     }
 
-    private void createSegmentReturn(Faker faker, List<SegmentDTO> segments, String[] departureDate, String[] origin) {
+    private void createSegmentReturn(Faker faker, List<SegmentDTO> segments, String[] departureDate, String[] origin,
+            String[] destination) {
         SegmentDTO segmentReturn = new SegmentDTO();
         List<LegDTO> legs = Lists.newArrayList();
-        LegDTO leg = new LegDTO(origin[1], origin[0], departureDate[1], "12:00", departureDate[1], "18:00",
+        LegDTO leg = new LegDTO(origin[1], destination[1], departureDate[1], "12:00", departureDate[1], "18:00",
                 faker.number().randomDigit(), null);
         legs.add(leg);
 
@@ -82,10 +84,11 @@ public class BetaConnector {
         segments.add(segmentReturn);
     }
 
-    private void createSegmentOrigin(Faker faker, List<SegmentDTO> segments, String[] departureDate, String[] origin) {
+    private void createSegmentOrigin(Faker faker, List<SegmentDTO> segments, String[] departureDate, String[] origin,
+            String[] destination) {
         SegmentDTO segmentOrigin = new SegmentDTO();
         List<LegDTO> legs = Lists.newArrayList();
-        LegDTO leg = new LegDTO(origin[0], origin[1], departureDate[0], "06:00", departureDate[0], "12:00",
+        LegDTO leg = new LegDTO(origin[0], destination[0], departureDate[0], "06:00", departureDate[0], "12:00",
                 faker.number().randomDigit(), null);
         legs.add(leg);
 

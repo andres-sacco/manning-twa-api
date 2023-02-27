@@ -7,30 +7,18 @@ management:
         include: "*"
 
 server:
-  port: 6070
+  port: 5070
   servlet:
-    context-path: /api/flights/catalog
+    context-path: /api/flights/pricing
 
 jetty:
   threadPool:
     maxThreads: 10
     minThreads: 10
 
-chaos:
-  monkey:
-    enabled: false
-    watcher:
-      restController: true
-    assaults:
-      exceptionsActive: true
-      latencyActive: true   
-      latencyRangeStart: 10
-      latencyRangeEnd: 5000  
-      
 spring:
   profiles:
     active: default
-       
   flyway:
     locations: classpath:db/migration
     sql-migration-prefix: V
@@ -38,7 +26,7 @@ spring:
     sql-migration-separator: __
     sql-migration-suffixes: .sql
   datasource:
-    url: "jdbc:mysql://localhost:3310/flights_catalog?autoReconnect=true"
+    url: "jdbc:mysql://localhost:3311/flights_pricing?autoReconnect=true"
     username: root
     password: muppet
     driverClassName: com.mysql.cj.jdbc.Driver

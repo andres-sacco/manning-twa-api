@@ -1,5 +1,5 @@
 start:
-	mvn clean install -Dmaven.test.skip=true
+	mvn clean install -P PK -Dmaven.test.skip=true
 	docker-compose build
 	docker-compose up
 

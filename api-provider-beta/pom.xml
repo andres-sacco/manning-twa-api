@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.twa.flights.common</groupId>
 		<artifactId>flights-parent</artifactId>
-		<version>1.0.4</version>
+		<version>1.0.5</version>
 		<relativePath/>
 	</parent>
 
@@ -30,10 +30,9 @@
 		<application.mainClass>com.twa.flights.api.provider.beta.App</application.mainClass>
 
 		<!-- Spring -->
-		<spring-boot.version>2.4.2</spring-boot.version>
+		<spring-boot.version>2.4.10</spring-boot.version>
 
 		<!-- General -->
-		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
 		<orika-core.version>1.5.4</orika-core.version>
 		<springdoc-openapi-ui.version>1.5.8</springdoc-openapi-ui.version>
 		<guava.version>30.1.1-jre</guava.version>
@@ -44,7 +43,7 @@
 		<flights-common-dto.version>1.0.4</flights-common-dto.version>
 
 		<!-- Maven plugins -->
-		<spring-boot-maven-plugin.version>2.4.2</spring-boot-maven-plugin.version>
+		<spring-boot-maven-plugin.version>2.4.10</spring-boot-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -99,12 +98,6 @@
 		</dependency>
 
 		<!-- General -->
-		<dependency>
-		    <groupId>de.codecentric</groupId>
-		    <artifactId>chaos-monkey-spring-boot</artifactId>
-		    <version>${chaos-monkey-spring-boot.version}</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -173,52 +166,40 @@
 
 	</dependencies>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring-boot-maven-plugin.version}</version>
-				<configuration>
-					<mainClass>com.twa.flights.api.provider.beta.App</mainClass>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
-				<executions>
-					<execution>
-						<id>jacoco-initialize</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>jacoco-site</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>			
-		</plugins>
-	</build>
+    <profiles>
+        <profile>
+            <id>PK</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>${spring-boot-maven-plugin.version}</version>
+                        <configuration>
+                            <mainClass>com.twa.flights.api.provider.beta.App</mainClass>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>repackage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 	<repositories>
 		<repository>
 			<id>manning-twa-lib-parent</id>

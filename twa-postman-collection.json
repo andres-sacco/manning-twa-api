@@ -1,21 +1,21 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "c4eec34d-52b0-4fde-8c81-5584e51f2c8d",
 		"name": "Manning - TWA",
-		"_postman_id": "9c1aace6-059c-ecf8-25d7-1decf8aeda61",
 		"description": "This collection contain all the endpoints of the different API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "api-clusters",
-			"description": "",
 			"item": [
 				{
 					"name": "Search",
 					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2023-05-29,2023-06-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -30,52 +30,34 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "BUE,MIA",
-									"equals": true,
-									"description": ""
+									"value": "BUE,MIA"
 								},
 								{
 									"key": "to",
-									"value": "MIA,BUE",
-									"equals": true,
-									"description": ""
+									"value": "MIA,BUE"
 								},
 								{
 									"key": "departure",
-									"value": "2021-05-29,2021-06-03",
-									"equals": true,
-									"description": ""
+									"value": "2023-05-29,2023-06-03"
 								},
 								{
 									"key": "adults",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "children",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "infants",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "amount",
-									"value": "10",
-									"equals": true,
-									"description": ""
+									"value": "10"
 								}
-							],
-							"variable": []
+							]
 						},
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"description": "This endpoint provide you the chance to do a search and obtain all itineraries with the final price"
 					},
 					"response": []
@@ -83,8 +65,10 @@
 				{
 					"name": "Search next page",
 					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10&id=TWA_g=2021-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-11-29,2021-12-03_a=1_c=1_i=1&offset=1",
+							"raw": "http://localhost:4070/api/flights/clusters/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2023-11-29,2023-12-03&adults=1&children=1&infants=1&amount=10&id=TWA_g=2023-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2023-11-29,2023-12-03_a=1_c=1_i=1&offset=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -99,64 +83,68 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "BUE,MIA",
-									"equals": true,
-									"description": ""
+									"value": "BUE,MIA"
 								},
 								{
 									"key": "to",
-									"value": "MIA,BUE",
-									"equals": true,
-									"description": ""
+									"value": "MIA,BUE"
 								},
 								{
 									"key": "departure",
-									"value": "2021-11-29,2021-12-03",
-									"equals": true,
-									"description": ""
+									"value": "2023-11-29,2023-12-03"
 								},
 								{
 									"key": "adults",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "children",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "infants",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "amount",
-									"value": "10",
-									"equals": true,
-									"description": ""
+									"value": "10"
 								},
 								{
 									"key": "id",
-									"value": "TWA_g=2021-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2021-11-29,2021-12-03_a=1_c=1_i=1",
-									"equals": true,
-									"description": ""
+									"value": "TWA_g=2023-11-29T13:03:13.990582_f=BUE,MIA_t=MIA,BUE_d=2023-11-29,2023-12-03_a=1_c=1_i=1"
 								},
 								{
 									"key": "offset",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								}
-							],
-							"variable": []
+							]
 						},
+						"description": "This endpoint provide you the chance to do a search and obtain all itineraries with the final price"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Itinerary by ID",
+					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"url": {
+							"raw": "http://localhost:4070/api/flights/clusters/itineraries/TWA_g=2022-05-07T00:37:08.986191_f=BUE,MIA_t=MIA,BUE_d=2022-06-29,2022-07-03_a=1_c=1_i=1/itinerary/98b2aa42-cf1d-4ef1-8e82-4aae352be73b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4070",
+							"path": [
+								"api",
+								"flights",
+								"clusters",
+								"itineraries",
+								"TWA_g=2022-05-07T00:37:08.986191_f=BUE,MIA_t=MIA,BUE_d=2022-06-29,2022-07-03_a=1_c=1_i=1",
+								"itinerary",
+								"98b2aa42-cf1d-4ef1-8e82-4aae352be73b"
+							]
+						},
 						"description": "This endpoint provide you the chance to do a search and obtain all itineraries with the final price"
 					},
 					"response": []
@@ -164,12 +152,21 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://localhost:4070/api/flights/clusters/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:4070/api/flights/clusters/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4070",
+							"path": [
+								"api",
+								"flights",
+								"clusters",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},
@@ -179,17 +176,29 @@
 		},
 		{
 			"name": "api-pricing",
-			"description": "",
 			"item": [
 				{
 					"name": "Pricing-Itineraries",
 					"request": {
-						"url": "http://localhost:5070/api/flights/pricing/itineraries",
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"id\": \"b131c0a4-0476-4cb2-88bc-54466796ad0e\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 194.92,\n                \"base\": 287.49,\n                \"quantity\": 1,\n                \"subtotal\": 482.41,\n                \"total\": 482.41,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 208.18,\n                \"base\": 531.42,\n                \"quantity\": 1,\n                \"subtotal\": 739.6,\n                \"total\": 739.6,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 102.79,\n                \"base\": 70.06,\n                \"quantity\": 1,\n                \"subtotal\": 172.85,\n                \"total\": 172.85,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AR\"\n    },\n    {\n        \"id\": \"011cba34-a6e6-4dda-a8d2-e205fad2f03c\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 0,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 214.78,\n                \"base\": 707.65,\n                \"quantity\": 1,\n                \"subtotal\": 922.43,\n                \"total\": 922.43,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 177.99,\n                \"base\": 742.21,\n                \"quantity\": 1,\n                \"subtotal\": 920.2,\n                \"total\": 920.2,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 111.48,\n                \"base\": 32.19,\n                \"quantity\": 1,\n                \"subtotal\": 143.67,\n                \"total\": 143.67,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"556c589b-14f8-4d9d-9de5-d123e07546a1\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 33.9,\n                \"base\": 191.6,\n                \"quantity\": 1,\n                \"subtotal\": 225.5,\n                \"total\": 225.5,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 143.44,\n                \"base\": 547.43,\n                \"quantity\": 1,\n                \"subtotal\": 690.87,\n                \"total\": 690.87,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 215.68,\n                \"base\": 421.75,\n                \"quantity\": 1,\n                \"subtotal\": 637.43,\n                \"total\": 637.43,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"5c7d6d79-c614-4786-83c7-e420bbeb703a\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 6,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 184.86,\n                \"base\": 614.69,\n                \"quantity\": 1,\n                \"subtotal\": 799.55,\n                \"total\": 799.55,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 4.04,\n                \"base\": 79.68,\n                \"quantity\": 1,\n                \"subtotal\": 83.72,\n                \"total\": 83.72,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 56.01,\n                \"base\": 233.59,\n                \"quantity\": 1,\n                \"subtotal\": 289.6,\n                \"total\": 289.6,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"723b0b3a-446d-4052-8e10-03d542adc37a\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 234.72,\n                \"base\": 447.2,\n                \"quantity\": 1,\n                \"subtotal\": 681.92,\n                \"total\": 681.92,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 163.31,\n                \"base\": 253.96,\n                \"quantity\": 1,\n                \"subtotal\": 417.27,\n                \"total\": 417.27,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 116.6,\n                \"base\": 109.52,\n                \"quantity\": 1,\n                \"subtotal\": 226.12,\n                \"total\": 226.12,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"b6fdfebf-516a-4474-b9fc-1ad6719fbb84\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 120.83,\n                \"base\": 441.67,\n                \"quantity\": 1,\n                \"subtotal\": 562.5,\n                \"total\": 562.5,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 186.88,\n                \"base\": 385.72,\n                \"quantity\": 1,\n                \"subtotal\": 572.6,\n                \"total\": 572.6,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 140.48,\n                \"base\": 379.17,\n                \"quantity\": 1,\n                \"subtotal\": 519.65,\n                \"total\": 519.65,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"8ca2fa6f-e7ae-4700-be1f-f1c4515528b9\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 85.05,\n                \"base\": 282.28,\n                \"quantity\": 1,\n                \"subtotal\": 367.33,\n                \"total\": 367.33,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 153.55,\n                \"base\": 836.78,\n                \"quantity\": 1,\n                \"subtotal\": 990.33,\n                \"total\": 990.33,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 155.48,\n                \"base\": 427.39,\n                \"quantity\": 1,\n                \"subtotal\": 582.87,\n                \"total\": 582.87,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"6240c6e1-bb18-402b-afba-fcfc53f6e330\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 222.11,\n                \"base\": 713.77,\n                \"quantity\": 1,\n                \"subtotal\": 935.88,\n                \"total\": 935.88,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 180.12,\n                \"base\": 451.91,\n                \"quantity\": 1,\n                \"subtotal\": 632.03,\n                \"total\": 632.03,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 91.74,\n                \"base\": 541.1,\n                \"quantity\": 1,\n                \"subtotal\": 632.84,\n                \"total\": 632.84,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"LA\"\n    },\n    {\n        \"id\": \"729746ab-ebfe-4c85-b7d1-bf1c3a3bdf46\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 55.63,\n                \"base\": 734.25,\n                \"quantity\": 1,\n                \"subtotal\": 789.88,\n                \"total\": 789.88,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 35.47,\n                \"base\": 207.77,\n                \"quantity\": 1,\n                \"subtotal\": 243.24,\n                \"total\": 243.24,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 110.72,\n                \"base\": 899.57,\n                \"quantity\": 1,\n                \"subtotal\": 1010.29,\n                \"total\": 1010.29,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"09ac5e10-8e17-4a1b-9b84-0aad9e7876d4\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 107.51,\n                \"base\": 451.15,\n                \"quantity\": 1,\n                \"subtotal\": 558.66,\n                \"total\": 558.66,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 206.31,\n                \"base\": 786.82,\n                \"quantity\": 1,\n                \"subtotal\": 993.13,\n                \"total\": 993.13,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 189.1,\n                \"base\": 590.63,\n                \"quantity\": 1,\n                \"subtotal\": 779.73,\n                \"total\": 779.73,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"e75e32ab-3979-4af2-b358-5327c12c5b9e\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 6,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 142.6,\n                \"base\": 571.1,\n                \"quantity\": 1,\n                \"subtotal\": 713.7,\n                \"total\": 713.7,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 199.68,\n                \"base\": 702.5,\n                \"quantity\": 1,\n                \"subtotal\": 902.18,\n                \"total\": 902.18,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 32.0,\n                \"base\": 274.27,\n                \"quantity\": 1,\n                \"subtotal\": 306.27,\n                \"total\": 306.27,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"754015d9-9440-4daf-8255-7eb87215da88\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 131.52,\n                \"base\": 424.97,\n                \"quantity\": 1,\n                \"subtotal\": 556.49,\n                \"total\": 556.49,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 156.29,\n                \"base\": 161.0,\n                \"quantity\": 1,\n                \"subtotal\": 317.29,\n                \"total\": 317.29,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 15.92,\n                \"base\": 756.45,\n                \"quantity\": 1,\n                \"subtotal\": 772.37,\n                \"total\": 772.37,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"360d2685-5dbd-4357-b2ba-67d115ea22d4\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 102.52,\n                \"base\": 546.41,\n                \"quantity\": 1,\n                \"subtotal\": 648.93,\n                \"total\": 648.93,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 45.11,\n                \"base\": 583.68,\n                \"quantity\": 1,\n                \"subtotal\": 628.79,\n                \"total\": 628.79,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 20.7,\n                \"base\": 110.39,\n                \"quantity\": 1,\n                \"subtotal\": 131.09,\n                \"total\": 131.09,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"JJ\"\n    },\n    {\n        \"id\": \"a269dcc3-02d7-48ba-86e4-e7d417363979\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 78.63,\n                \"base\": 608.58,\n                \"quantity\": 1,\n                \"subtotal\": 687.21,\n                \"total\": 687.21,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 153.3,\n                \"base\": 187.29,\n                \"quantity\": 1,\n                \"subtotal\": 340.59,\n                \"total\": 340.59,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 111.63,\n                \"base\": 879.53,\n                \"quantity\": 1,\n                \"subtotal\": 991.16,\n                \"total\": 991.16,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"LA\"\n    },\n    {\n        \"id\": \"cac50fc1-10fa-4b8f-a7de-8bd8abbc04a7\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 153.25,\n                \"base\": 271.62,\n                \"quantity\": 1,\n                \"subtotal\": 424.87,\n                \"total\": 424.87,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 98.86,\n                \"base\": 8.08,\n                \"quantity\": 1,\n                \"subtotal\": 106.94,\n                \"total\": 106.94,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 168.8,\n                \"base\": 571.02,\n                \"quantity\": 1,\n                \"subtotal\": 739.82,\n                \"total\": 739.82,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"0cf9125a-c8ed-4eee-bb71-78827e068ef5\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 49.07,\n                \"base\": 511.53,\n                \"quantity\": 1,\n                \"subtotal\": 560.6,\n                \"total\": 560.6,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 29.15,\n                \"base\": 665.21,\n                \"quantity\": 1,\n                \"subtotal\": 694.36,\n                \"total\": 694.36,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 5.2,\n                \"base\": 195.98,\n                \"quantity\": 1,\n                \"subtotal\": 201.18,\n                \"total\": 201.18,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"256b43cf-7112-4d9d-a55d-935ecd7091f9\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 202.95,\n                \"base\": 527.42,\n                \"quantity\": 1,\n                \"subtotal\": 730.37,\n                \"total\": 730.37,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 97.49,\n                \"base\": 99.33,\n                \"quantity\": 1,\n                \"subtotal\": 196.82,\n                \"total\": 196.82,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 229.37,\n                \"base\": 695.08,\n                \"quantity\": 1,\n                \"subtotal\": 924.45,\n                \"total\": 924.45,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"KL\"\n    },\n    {\n        \"id\": \"10615cae-18e8-402e-ae92-48f792038229\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 181.94,\n                \"base\": 195.46,\n                \"quantity\": 1,\n                \"subtotal\": 377.4,\n                \"total\": 377.4,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 48.33,\n                \"base\": 113.78,\n                \"quantity\": 1,\n                \"subtotal\": 162.11,\n                \"total\": 162.11,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 62.37,\n                \"base\": 905.88,\n                \"quantity\": 1,\n                \"subtotal\": 968.25,\n                \"total\": 968.25,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"ca1fd888-12c7-4091-a1f2-e60bb17edb6d\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 38.45,\n                \"base\": 241.8,\n                \"quantity\": 1,\n                \"subtotal\": 280.25,\n                \"total\": 280.25,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 145.45,\n                \"base\": 423.54,\n                \"quantity\": 1,\n                \"subtotal\": 568.99,\n                \"total\": 568.99,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 230.2,\n                \"base\": 916.89,\n                \"quantity\": 1,\n                \"subtotal\": 1147.09,\n                \"total\": 1147.09,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"fafbf3d8-edf8-4c6e-82c4-e704231c5831\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2021-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2021-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2021-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2021-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 59.47,\n                \"base\": 634.33,\n                \"quantity\": 1,\n                \"subtotal\": 693.8,\n                \"total\": 693.8,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 78.62,\n                \"base\": 621.49,\n                \"quantity\": 1,\n                \"subtotal\": 700.11,\n                \"total\": 700.11,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 115.06,\n                \"base\": 396.89,\n                \"quantity\": 1,\n                \"subtotal\": 511.95,\n                \"total\": 511.95,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"KL\"\n    }\n]"
+							"raw": "[\n    {\n        \"id\": \"b131c0a4-0476-4cb2-88bc-54466796ad0e\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 194.92,\n                \"base\": 287.49,\n                \"quantity\": 1,\n                \"subtotal\": 482.41,\n                \"total\": 482.41,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 208.18,\n                \"base\": 531.42,\n                \"quantity\": 1,\n                \"subtotal\": 739.6,\n                \"total\": 739.6,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 102.79,\n                \"base\": 70.06,\n                \"quantity\": 1,\n                \"subtotal\": 172.85,\n                \"total\": 172.85,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AR\"\n    },\n    {\n        \"id\": \"011cba34-a6e6-4dda-a8d2-e205fad2f03c\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 0,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 214.78,\n                \"base\": 707.65,\n                \"quantity\": 1,\n                \"subtotal\": 922.43,\n                \"total\": 922.43,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 177.99,\n                \"base\": 742.21,\n                \"quantity\": 1,\n                \"subtotal\": 920.2,\n                \"total\": 920.2,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 111.48,\n                \"base\": 32.19,\n                \"quantity\": 1,\n                \"subtotal\": 143.67,\n                \"total\": 143.67,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"556c589b-14f8-4d9d-9de5-d123e07546a1\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 33.9,\n                \"base\": 191.6,\n                \"quantity\": 1,\n                \"subtotal\": 225.5,\n                \"total\": 225.5,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 143.44,\n                \"base\": 547.43,\n                \"quantity\": 1,\n                \"subtotal\": 690.87,\n                \"total\": 690.87,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 215.68,\n                \"base\": 421.75,\n                \"quantity\": 1,\n                \"subtotal\": 637.43,\n                \"total\": 637.43,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"5c7d6d79-c614-4786-83c7-e420bbeb703a\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 6,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 184.86,\n                \"base\": 614.69,\n                \"quantity\": 1,\n                \"subtotal\": 799.55,\n                \"total\": 799.55,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 4.04,\n                \"base\": 79.68,\n                \"quantity\": 1,\n                \"subtotal\": 83.72,\n                \"total\": 83.72,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 56.01,\n                \"base\": 233.59,\n                \"quantity\": 1,\n                \"subtotal\": 289.6,\n                \"total\": 289.6,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"723b0b3a-446d-4052-8e10-03d542adc37a\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 234.72,\n                \"base\": 447.2,\n                \"quantity\": 1,\n                \"subtotal\": 681.92,\n                \"total\": 681.92,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 163.31,\n                \"base\": 253.96,\n                \"quantity\": 1,\n                \"subtotal\": 417.27,\n                \"total\": 417.27,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 116.6,\n                \"base\": 109.52,\n                \"quantity\": 1,\n                \"subtotal\": 226.12,\n                \"total\": 226.12,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"b6fdfebf-516a-4474-b9fc-1ad6719fbb84\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 120.83,\n                \"base\": 441.67,\n                \"quantity\": 1,\n                \"subtotal\": 562.5,\n                \"total\": 562.5,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 186.88,\n                \"base\": 385.72,\n                \"quantity\": 1,\n                \"subtotal\": 572.6,\n                \"total\": 572.6,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 140.48,\n                \"base\": 379.17,\n                \"quantity\": 1,\n                \"subtotal\": 519.65,\n                \"total\": 519.65,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"8ca2fa6f-e7ae-4700-be1f-f1c4515528b9\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 85.05,\n                \"base\": 282.28,\n                \"quantity\": 1,\n                \"subtotal\": 367.33,\n                \"total\": 367.33,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 153.55,\n                \"base\": 836.78,\n                \"quantity\": 1,\n                \"subtotal\": 990.33,\n                \"total\": 990.33,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 155.48,\n                \"base\": 427.39,\n                \"quantity\": 1,\n                \"subtotal\": 582.87,\n                \"total\": 582.87,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"6240c6e1-bb18-402b-afba-fcfc53f6e330\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 222.11,\n                \"base\": 713.77,\n                \"quantity\": 1,\n                \"subtotal\": 935.88,\n                \"total\": 935.88,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 180.12,\n                \"base\": 451.91,\n                \"quantity\": 1,\n                \"subtotal\": 632.03,\n                \"total\": 632.03,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 91.74,\n                \"base\": 541.1,\n                \"quantity\": 1,\n                \"subtotal\": 632.84,\n                \"total\": 632.84,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"LA\"\n    },\n    {\n        \"id\": \"729746ab-ebfe-4c85-b7d1-bf1c3a3bdf46\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 55.63,\n                \"base\": 734.25,\n                \"quantity\": 1,\n                \"subtotal\": 789.88,\n                \"total\": 789.88,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 35.47,\n                \"base\": 207.77,\n                \"quantity\": 1,\n                \"subtotal\": 243.24,\n                \"total\": 243.24,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 110.72,\n                \"base\": 899.57,\n                \"quantity\": 1,\n                \"subtotal\": 1010.29,\n                \"total\": 1010.29,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"09ac5e10-8e17-4a1b-9b84-0aad9e7876d4\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 107.51,\n                \"base\": 451.15,\n                \"quantity\": 1,\n                \"subtotal\": 558.66,\n                \"total\": 558.66,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 206.31,\n                \"base\": 786.82,\n                \"quantity\": 1,\n                \"subtotal\": 993.13,\n                \"total\": 993.13,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 189.1,\n                \"base\": 590.63,\n                \"quantity\": 1,\n                \"subtotal\": 779.73,\n                \"total\": 779.73,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"e75e32ab-3979-4af2-b358-5327c12c5b9e\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 6,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 142.6,\n                \"base\": 571.1,\n                \"quantity\": 1,\n                \"subtotal\": 713.7,\n                \"total\": 713.7,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 199.68,\n                \"base\": 702.5,\n                \"quantity\": 1,\n                \"subtotal\": 902.18,\n                \"total\": 902.18,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 32.0,\n                \"base\": 274.27,\n                \"quantity\": 1,\n                \"subtotal\": 306.27,\n                \"total\": 306.27,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"754015d9-9440-4daf-8255-7eb87215da88\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 131.52,\n                \"base\": 424.97,\n                \"quantity\": 1,\n                \"subtotal\": 556.49,\n                \"total\": 556.49,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 156.29,\n                \"base\": 161.0,\n                \"quantity\": 1,\n                \"subtotal\": 317.29,\n                \"total\": 317.29,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 15.92,\n                \"base\": 756.45,\n                \"quantity\": 1,\n                \"subtotal\": 772.37,\n                \"total\": 772.37,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"360d2685-5dbd-4357-b2ba-67d115ea22d4\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 102.52,\n                \"base\": 546.41,\n                \"quantity\": 1,\n                \"subtotal\": 648.93,\n                \"total\": 648.93,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 45.11,\n                \"base\": 583.68,\n                \"quantity\": 1,\n                \"subtotal\": 628.79,\n                \"total\": 628.79,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 20.7,\n                \"base\": 110.39,\n                \"quantity\": 1,\n                \"subtotal\": 131.09,\n                \"total\": 131.09,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"JJ\"\n    },\n    {\n        \"id\": \"a269dcc3-02d7-48ba-86e4-e7d417363979\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 7,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 78.63,\n                \"base\": 608.58,\n                \"quantity\": 1,\n                \"subtotal\": 687.21,\n                \"total\": 687.21,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 153.3,\n                \"base\": 187.29,\n                \"quantity\": 1,\n                \"subtotal\": 340.59,\n                \"total\": 340.59,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 111.63,\n                \"base\": 879.53,\n                \"quantity\": 1,\n                \"subtotal\": 991.16,\n                \"total\": 991.16,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"LA\"\n    },\n    {\n        \"id\": \"cac50fc1-10fa-4b8f-a7de-8bd8abbc04a7\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 5,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 153.25,\n                \"base\": 271.62,\n                \"quantity\": 1,\n                \"subtotal\": 424.87,\n                \"total\": 424.87,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 98.86,\n                \"base\": 8.08,\n                \"quantity\": 1,\n                \"subtotal\": 106.94,\n                \"total\": 106.94,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 168.8,\n                \"base\": 571.02,\n                \"quantity\": 1,\n                \"subtotal\": 739.82,\n                \"total\": 739.82,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"0cf9125a-c8ed-4eee-bb71-78827e068ef5\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 1,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 49.07,\n                \"base\": 511.53,\n                \"quantity\": 1,\n                \"subtotal\": 560.6,\n                \"total\": 560.6,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 29.15,\n                \"base\": 665.21,\n                \"quantity\": 1,\n                \"subtotal\": 694.36,\n                \"total\": 694.36,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 5.2,\n                \"base\": 195.98,\n                \"quantity\": 1,\n                \"subtotal\": 201.18,\n                \"total\": 201.18,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"256b43cf-7112-4d9d-a55d-935ecd7091f9\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 3,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 202.95,\n                \"base\": 527.42,\n                \"quantity\": 1,\n                \"subtotal\": 730.37,\n                \"total\": 730.37,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 97.49,\n                \"base\": 99.33,\n                \"quantity\": 1,\n                \"subtotal\": 196.82,\n                \"total\": 196.82,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 229.37,\n                \"base\": 695.08,\n                \"quantity\": 1,\n                \"subtotal\": 924.45,\n                \"total\": 924.45,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"KL\"\n    },\n    {\n        \"id\": \"10615cae-18e8-402e-ae92-48f792038229\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 2,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 181.94,\n                \"base\": 195.46,\n                \"quantity\": 1,\n                \"subtotal\": 377.4,\n                \"total\": 377.4,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 48.33,\n                \"base\": 113.78,\n                \"quantity\": 1,\n                \"subtotal\": 162.11,\n                \"total\": 162.11,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 62.37,\n                \"base\": 905.88,\n                \"quantity\": 1,\n                \"subtotal\": 968.25,\n                \"total\": 968.25,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"DL\"\n    },\n    {\n        \"id\": \"ca1fd888-12c7-4091-a1f2-e60bb17edb6d\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 9,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 38.45,\n                \"base\": 241.8,\n                \"quantity\": 1,\n                \"subtotal\": 280.25,\n                \"total\": 280.25,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 145.45,\n                \"base\": 423.54,\n                \"quantity\": 1,\n                \"subtotal\": 568.99,\n                \"total\": 568.99,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 230.2,\n                \"base\": 916.89,\n                \"quantity\": 1,\n                \"subtotal\": 1147.09,\n                \"total\": 1147.09,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"AA\"\n    },\n    {\n        \"id\": \"fafbf3d8-edf8-4c6e-82c4-e704231c5831\",\n        \"segments\": [\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"BUE\",\n                        \"destination\": \"MIA\",\n                        \"departureDate\": \"2023-03-29\",\n                        \"departureTime\": \"06:00\",\n                        \"arrivalDate\": \"2023-03-29\",\n                        \"arrivalTime\": \"12:00\",\n                        \"number\": 4,\n                        \"flightDuration\": \"07:00\"\n                    }\n                ],\n                \"flightDuration\": \"07:00\"\n            },\n            {\n                \"legs\": [\n                    {\n                        \"origin\": \"MIA\",\n                        \"destination\": \"BUE\",\n                        \"departureDate\": \"2023-04-03\",\n                        \"departureTime\": \"12:00\",\n                        \"arrivalDate\": \"2023-04-03\",\n                        \"arrivalTime\": \"18:00\",\n                        \"number\": 8,\n                        \"flightDuration\": \"05:00\"\n                    }\n                ],\n                \"flightDuration\": \"05:00\"\n            }\n        ],\n        \"priceInfo\": {\n            \"adults\": {\n                \"tax\": 59.47,\n                \"base\": 634.33,\n                \"quantity\": 1,\n                \"subtotal\": 693.8,\n                \"total\": 693.8,\n                \"type\": \"ADULT\",\n                \"markup\": null\n            },\n            \"children\": {\n                \"tax\": 78.62,\n                \"base\": 621.49,\n                \"quantity\": 1,\n                \"subtotal\": 700.11,\n                \"total\": 700.11,\n                \"type\": \"CHILD\",\n                \"markup\": null\n            },\n            \"infants\": {\n                \"tax\": 115.06,\n                \"base\": 396.89,\n                \"quantity\": 1,\n                \"subtotal\": 511.95,\n                \"total\": 511.95,\n                \"type\": \"INFANT\",\n                \"markup\": null\n            }\n        },\n        \"provider\": \"BETA\",\n        \"flightType\": \"ROUND_TRIP\",\n        \"carrier\": \"KL\"\n    }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:5070/api/flights/pricing/itineraries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5070",
+							"path": [
+								"api",
+								"flights",
+								"pricing",
+								"itineraries"
+							]
 						},
 						"description": "This endpoint obtain the markup of each type of passenger and the final price of each itinerary"
 					},
@@ -198,12 +207,21 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://localhost:5070/api/flights/pricing/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:5070/api/flights/pricing/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5070",
+							"path": [
+								"api",
+								"flights",
+								"pricing",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},
@@ -213,31 +231,72 @@
 		},
 		{
 			"name": "api-catalog",
-			"description": "",
 			"item": [
 				{
 					"name": "City by code",
 					"request": {
-						"url": "http://localhost:6070/api/flights/catalog/city/BUE",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:6070/api/flights/catalog/city/BUE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6070",
+							"path": [
+								"api",
+								"flights",
+								"catalog",
+								"city",
+								"BUE"
+							]
 						},
 						"description": "This endpoint provide all the information about one particular city"
 					},
 					"response": []
 				},
 				{
-					"name": "Health",
+					"name": "Country by code",
 					"request": {
-						"url": "http://localhost:6070/api/flights/catalog/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:6070/api/flights/catalog/country/AR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6070",
+							"path": [
+								"api",
+								"flights",
+								"catalog",
+								"country",
+								"AR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6070/api/flights/catalog/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6070",
+							"path": [
+								"api",
+								"flights",
+								"catalog",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},
@@ -247,13 +306,14 @@
 		},
 		{
 			"name": "api-itineraries-search",
-			"description": "",
 			"item": [
 				{
 					"name": "Search",
 					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "http://localhost:7070/api/flights/itineraries-search/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:7070/api/flights/itineraries-search/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2023-11-29,2023-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -268,52 +328,34 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "BUE,MIA",
-									"equals": true,
-									"description": ""
+									"value": "BUE,MIA"
 								},
 								{
 									"key": "to",
-									"value": "MIA,BUE",
-									"equals": true,
-									"description": ""
+									"value": "MIA,BUE"
 								},
 								{
 									"key": "departure",
-									"value": "2021-11-29,2021-12-03",
-									"equals": true,
-									"description": ""
+									"value": "2023-11-29,2023-12-03"
 								},
 								{
 									"key": "adults",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "children",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "infants",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "amount",
-									"value": "10",
-									"equals": true,
-									"description": ""
+									"value": "10"
 								}
-							],
-							"variable": []
+							]
 						},
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"description": "This endpoint provide a search to all the providers"
 					},
 					"response": []
@@ -321,12 +363,21 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://localhost:7070/api/flights/itineraries-search/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:7070/api/flights/itineraries-search/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"flights",
+								"itineraries-search",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},
@@ -336,13 +387,14 @@
 		},
 		{
 			"name": "api-provider-alpha",
-			"description": "",
 			"item": [
 				{
 					"name": "Search",
 					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "http://localhost:8070/api/flights/provider/alpha/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:8070/api/flights/provider/alpha/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2023-11-29,2023-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -358,52 +410,34 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "BUE,MIA",
-									"equals": true,
-									"description": ""
+									"value": "BUE,MIA"
 								},
 								{
 									"key": "to",
-									"value": "MIA,BUE",
-									"equals": true,
-									"description": ""
+									"value": "MIA,BUE"
 								},
 								{
 									"key": "departure",
-									"value": "2021-11-29,2021-12-03",
-									"equals": true,
-									"description": ""
+									"value": "2023-11-29,2023-12-03"
 								},
 								{
 									"key": "adults",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "children",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "infants",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "amount",
-									"value": "10",
-									"equals": true,
-									"description": ""
+									"value": "10"
 								}
-							],
-							"variable": []
+							]
 						},
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"description": "This request is for do a search in the Provider-Alpha"
 					},
 					"response": []
@@ -411,12 +445,22 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://localhost:8070/api/flights/provider/alpha/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:8070/api/flights/provider/alpha/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"flights",
+								"provider",
+								"alpha",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},
@@ -426,13 +470,14 @@
 		},
 		{
 			"name": "api-provider-beta",
-			"description": "",
 			"item": [
 				{
 					"name": "Search",
 					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/api/flights/provider/beta/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2021-11-29,2021-12-03&adults=1&children=1&infants=1&amount=10",
+							"raw": "http://localhost:9070/api/flights/provider/beta/itineraries?from=BUE,MIA&to=MIA,BUE&departure=2023-11-29,2023-12-03&adults=1&children=1&infants=1&amount=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -448,52 +493,34 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "BUE,MIA",
-									"equals": true,
-									"description": ""
+									"value": "BUE,MIA"
 								},
 								{
 									"key": "to",
-									"value": "MIA,BUE",
-									"equals": true,
-									"description": ""
+									"value": "MIA,BUE"
 								},
 								{
 									"key": "departure",
-									"value": "2021-11-29,2021-12-03",
-									"equals": true,
-									"description": ""
+									"value": "2023-11-29,2023-12-03"
 								},
 								{
 									"key": "adults",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "children",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "infants",
-									"value": "1",
-									"equals": true,
-									"description": ""
+									"value": "1"
 								},
 								{
 									"key": "amount",
-									"value": "10",
-									"equals": true,
-									"description": ""
+									"value": "10"
 								}
-							],
-							"variable": []
+							]
 						},
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"description": "This endpoint do a search in the Provider-Beta"
 					},
 					"response": []
@@ -501,12 +528,50 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://localhost:9070/api/flights/provider/beta/health",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+						"url": {
+							"raw": "http://localhost:9070/api/flights/provider/beta/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9070",
+							"path": [
+								"api",
+								"flights",
+								"provider",
+								"beta",
+								"health"
+							]
+						},
+						"description": "This endpoint provide you information about the status of the API"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-reservation",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3070/api/flights/reservation/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3070",
+							"path": [
+								"api",
+								"flights",
+								"reservation",
+								"health"
+							]
 						},
 						"description": "This endpoint provide you information about the status of the API"
 					},

@@ -16,20 +16,9 @@ jetty:
     maxThreads: 10
     minThreads: 10
 
-chaos:
-  monkey:
-    enabled: false
-    watcher:
-      restController: true
-    assaults:
-      exceptionsActive: true
-      latencyActive: true   
-      latencyRangeStart: 10
-      latencyRangeEnd: 5000  
-      
 spring:
   profiles:
-    active: chaos-monkey
+    active: default
   flyway:
     locations: classpath:db/migration
     sql-migration-prefix: V
@@ -37,7 +26,7 @@ spring:
     sql-migration-separator: __
     sql-migration-suffixes: .sql
   datasource:
-    url: "jdbc:mysql://localhost:3311/flights_pricing?autoReconnect=true"
+    url: "jdbc:mysql://api-pricing-db:3306/flights_pricing?autoReconnect=true"
     username: root
     password: muppet
     driverClassName: com.mysql.cj.jdbc.Driver

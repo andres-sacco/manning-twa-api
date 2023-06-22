@@ -2,7 +2,7 @@ version: '3.0'
 services:      
   api-catalog-db:
     container_name: api-catalog-db
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: 'flights_catalog'
@@ -19,7 +19,7 @@ services:
      
   api-pricing-db:
     container_name: api-pricing-db
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: 'flights_pricing'

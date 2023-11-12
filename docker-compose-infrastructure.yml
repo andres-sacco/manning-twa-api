@@ -8,14 +8,14 @@ services:
       MYSQL_DATABASE: 'flights_catalog'
       MYSQL_ROOT_PASSWORD: 'muppet'
     ports:
-     - 3310:3306
+     - "3310:3306"
 
   api-clusters-db:
     container_name: api-clusters-db
     image: redis:alpine
     restart: always
     ports:
-     - 6079:6379
+     - "6079:6379"
      
   api-pricing-db:
     container_name: api-pricing-db
@@ -25,4 +25,4 @@ services:
       MYSQL_DATABASE: 'flights_pricing'
       MYSQL_ROOT_PASSWORD: 'muppet'        
     ports:
-     - 3311:3306
+     - "3311:3306"

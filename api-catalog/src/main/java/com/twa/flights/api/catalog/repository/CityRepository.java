@@ -7,7 +7,5 @@ import com.twa.flights.api.catalog.model.City;
 
 @Repository
 public interface CityRepository extends PagingAndSortingRepository<City, Long> {
-
     City findByCode(String code);
-
 }

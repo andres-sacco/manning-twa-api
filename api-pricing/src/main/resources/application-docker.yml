@@ -18,14 +18,14 @@ jetty:
 
 chaos:
   monkey:
-    enabled: false
+    enabled: true
     watcher:
       restController: true
     assaults:
       exceptionsActive: true
       latencyActive: true   
-      latencyRangeStart: 10
-      latencyRangeEnd: 5000  
+      latencyRangeStart: 5000
+      latencyRangeEnd: 10000
       
 spring:
   profiles:

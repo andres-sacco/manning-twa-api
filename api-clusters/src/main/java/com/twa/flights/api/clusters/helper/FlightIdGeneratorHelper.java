@@ -20,8 +20,6 @@ public class FlightIdGeneratorHelper {
 
         id.append(prefix).append(UNDERSCORE_CHAR);
 
-        id.append("g").append(EQUALS_CHAR).append(LocalDateTime.now().toString()).append(UNDERSCORE_CHAR);
-
         id.append("f").append(EQUALS_CHAR).append(availabilityRequest.getFrom()).append(UNDERSCORE_CHAR);
 
         id.append("t").append(EQUALS_CHAR).append(availabilityRequest.getTo()).append(UNDERSCORE_CHAR);

@@ -27,8 +27,11 @@ public class ClustersService {
     private final ClustersRepository repository;
 
     @Autowired
-    public ClustersService(ItinerariesSearchService itinerariesSearchService, PricingService pricingService,
-            ClustersRepository repository) {
+    public ClustersService(
+            ItinerariesSearchService itinerariesSearchService,
+            PricingService pricingService,
+            ClustersRepository repository
+    ) {
         this.itinerariesSearchService = itinerariesSearchService;
         this.pricingService = pricingService;
         this.repository = repository;
@@ -38,7 +41,7 @@ public class ClustersService {
         LOGGER.debug("begin the search");
 
         ClusterSearchDTO response = null;
-
+        this.repository.get();
         if (StringUtils.isEmpty(request.getId())) { // New search
             response = availabilityFromProviders(request);
         } else { // Pagination old search

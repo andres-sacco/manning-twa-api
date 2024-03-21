@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ClientHttpConnector;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -57,7 +58,7 @@ public class ItinerariesSearchConnector {
                         .queryParam("infants", request.getInfants()).queryParam("amount", request.getAmount())
                         .queryParam("departure", request.getDeparture()).queryParam("from", request.getFrom())
                         .queryParam("to", request.getTo()).build())
-                .retrieve().onStatus(HttpStatus::isError, clientResponse -> {
+                .retrieve().onStatus(HttpStatusCode::isError, clientResponse -> {
                     LOGGER.error("Error while calling endpoint {} with status code {}", SEARCH,
                             clientResponse.statusCode());
                     throw new TWAException("Error while calling catalog endpoint");

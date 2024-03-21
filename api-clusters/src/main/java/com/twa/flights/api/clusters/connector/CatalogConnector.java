@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ClientHttpConnector;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -50,7 +51,7 @@ public class CatalogConnector {
                 .clientConnector(connector).build();
 
         return client.get().uri(configuration.getHost().concat(GET_CITY_BY_CODE).concat(code)).retrieve()
-                .onStatus(HttpStatus::isError, clientResponse -> {
+                .onStatus(HttpStatusCode::isError, clientResponse -> {
                     LOGGER.error("Error while calling endpoint {} with status code {}", GET_CITY_BY_CODE,
                             clientResponse.statusCode());
                     throw new TWAException("Error while calling catalog endpoint");

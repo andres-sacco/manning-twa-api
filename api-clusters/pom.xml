@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.twa.flights.common</groupId>
 		<artifactId>flights-parent</artifactId>
-		<version>1.0.5</version>
+		<version>1.1.0</version>
 		<relativePath/>
 	</parent>
 
@@ -30,11 +30,11 @@
 		<application.mainClass>com.twa.flights.api.clusters.App</application.mainClass>
 
 		<!-- Spring -->
-		<spring-boot.version>2.7.12</spring-boot.version>
+		<spring-boot.version>3.2.3</spring-boot.version>
 
 		<!-- General -->
 		<chaos-monkey-spring-boot.version>2.7.2</chaos-monkey-spring-boot.version>
-		<orika-core.version>1.5.4</orika-core.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
 		<springdoc-openapi-ui.version>1.7.0</springdoc-openapi-ui.version>
 		<guava.version>32.0.0-jre</guava.version>
 
@@ -136,9 +136,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>ma.glasnost.orika</groupId>
-			<artifactId>orika-core</artifactId>
-			<version>${orika-core.version}</version>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
 		</dependency>
 
 		<!-- TWA -->
@@ -186,6 +186,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<parameters>true</parameters>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

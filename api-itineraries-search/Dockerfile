@@ -1,4 +1,4 @@
-FROM openjdk:12-alpine
+FROM openjdk:21-slim
 
 COPY target/api-itineraries-search-*.jar application/api-itineraries-search.jar
 

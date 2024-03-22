@@ -50,10 +50,10 @@ public class ItinerariesSearchConnector {
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .clientConnector(connector).baseUrl(configuration.getHost()).build();
 
         return client.get()
-                .uri(uriBuilder -> uriBuilder.path(configuration.getHost().concat(SEARCH))
+                .uri(uriBuilder -> uriBuilder.path(SEARCH)
                         .queryParam("adults", request.getAdults()).queryParam("children", request.getChildren())
                         .queryParam("infants", request.getInfants()).queryParam("amount", request.getAmount())
                         .queryParam("departure", request.getDeparture()).queryParam("from", request.getFrom())

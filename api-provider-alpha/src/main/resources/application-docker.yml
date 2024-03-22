@@ -33,7 +33,7 @@ spring:
     
 connector:
    catalog:
-      host: api-catalog:6070
+      host: http://api-catalog:6070
       responseTimeout: 1000
       connectionTimeout: 1000
       readTimeout: 1000

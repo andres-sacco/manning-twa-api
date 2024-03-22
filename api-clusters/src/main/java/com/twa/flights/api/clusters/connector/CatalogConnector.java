@@ -48,9 +48,9 @@ public class CatalogConnector {
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .clientConnector(connector).baseUrl(configuration.getHost()).build();
 
-        return client.get().uri(configuration.getHost().concat(GET_CITY_BY_CODE).concat(code)).retrieve()
+        return client.get().uri(GET_CITY_BY_CODE.concat(code)).retrieve()
                 .onStatus(HttpStatusCode::isError, clientResponse -> {
                     LOGGER.error("Error while calling endpoint {} with status code {}", GET_CITY_BY_CODE,
                             clientResponse.statusCode());

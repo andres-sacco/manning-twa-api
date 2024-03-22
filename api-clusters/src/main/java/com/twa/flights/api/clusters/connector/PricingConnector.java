@@ -50,9 +50,9 @@ public class PricingConnector {
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .clientConnector(connector).baseUrl(configuration.getHost()).build();
 
-        return client.post().uri(configuration.getHost().concat(ITINERARIES)).bodyValue(itineraries).retrieve()
+        return client.post().uri(ITINERARIES).bodyValue(itineraries).retrieve()
                 .onStatus(HttpStatusCode::isError, clientResponse -> {
                     LOGGER.error("Error while calling endpoint {} with status code {}", ITINERARIES,
                             clientResponse.statusCode());

@@ -33,12 +33,12 @@ spring:
 
 connector:  
    provider-alpha:
-      host: localhost:8070
+      host: http://localhost:8070
       responseTimeout: 5000
       connectionTimeout: 5000
       readTimeout: 5000         
    provider-beta:
-      host: localhost:9070
+      host: http://localhost:9070
       responseTimeout: 5000
       connectionTimeout: 5000
       readTimeout: 5000 

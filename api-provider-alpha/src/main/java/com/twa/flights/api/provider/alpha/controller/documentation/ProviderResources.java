@@ -2,7 +2,7 @@ package com.twa.flights.api.provider.alpha.controller.documentation;
 
 import java.util.List;
 
-import org.springdoc.api.annotations.ParameterObject;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

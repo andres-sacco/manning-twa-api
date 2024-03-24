@@ -13,7 +13,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
-public class DocumentationControllerTest {
+class DocumentationControllerTest {
 
     private DocumentationController controller;
     private HttpServletResponse response;
@@ -25,18 +25,18 @@ public class DocumentationControllerTest {
     }
 
     @Test
-    public void should_redirect_documentation_without_error() {
+    void should_redirect_documentation_without_error() {
         controller.redirectToDocumentation(response);
     }
 
     @Test
-    public void should_redirect_documentation_error() throws IOException {
+    void should_redirect_documentation_error() throws IOException {
         doThrow(new IOException()).when(response).sendRedirect(anyString());
         controller.redirectToDocumentation(response);
     }
 
     @Test
-    public void should_redirect_documentation_error_message() throws IOException {
+    void should_redirect_documentation_error_message() throws IOException {
         doThrow(new IOException("as")).when(response).sendRedirect(anyString());
         controller.redirectToDocumentation(response);
     }

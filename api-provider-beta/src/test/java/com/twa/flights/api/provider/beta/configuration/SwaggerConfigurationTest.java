@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import com.twa.flights.api.provider.beta.service.AppInfoService;
 
-public class SwaggerConfigurationTest {
+class SwaggerConfigurationTest {
 
     AppInfoService appInfoService;
 
@@ -18,13 +18,13 @@ public class SwaggerConfigurationTest {
     }
 
     @Test
-    public void should_return_information_of_default_api() {
+    void should_return_information_of_default_api() {
         SwaggerConfiguration swaggerConfiguration = new SwaggerConfiguration(appInfoService);
         assertNotNull(swaggerConfiguration.defaultApi());
     }
 
     @Test
-    public void should_return_information_of_openapi() {
+    void should_return_information_of_openapi() {
         SwaggerConfiguration swaggerConfiguration = new SwaggerConfiguration(appInfoService);
         assertNotNull(swaggerConfiguration.openAPI());
     }

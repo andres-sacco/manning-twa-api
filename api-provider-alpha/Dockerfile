@@ -1,4 +1,4 @@
-FROM openjdk:12-alpine
+FROM openjdk:21-slim
 
 COPY target/api-provider-alpha-*.jar application/api-provider-alpha.jar
 

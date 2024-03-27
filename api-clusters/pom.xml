@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.twa.flights.common</groupId>
 		<artifactId>flights-parent</artifactId>
-		<version>1.0.4</version>
+		<version>1.1.0</version>
 		<relativePath/>
 	</parent>
 
@@ -30,19 +30,19 @@
 		<application.mainClass>com.twa.flights.api.clusters.App</application.mainClass>
 
 		<!-- Spring -->
-		<spring-boot.version>2.4.2</spring-boot.version>
+		<spring-boot.version>3.2.3</spring-boot.version>
 
 		<!-- General -->
-		<chaos-monkey-spring-boot.version>2.3.1</chaos-monkey-spring-boot.version>
-		<orika-core.version>1.5.4</orika-core.version>
-		<springdoc-openapi-ui.version>1.5.8</springdoc-openapi-ui.version>
-		<guava.version>30.1.1-jre</guava.version>
+		<chaos-monkey-spring-boot.version>2.7.2</chaos-monkey-spring-boot.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
+		<springdoc-openapi-starter-webmvc-ui.version>2.1.0</springdoc-openapi-starter-webmvc-ui.version>
+		<guava.version>32.0.0-jre</guava.version>
 
 		<!-- TWA -->
 		<flights-common-dto.version>1.0.4</flights-common-dto.version>
 
 		<!-- Maven plugins -->
-		<spring-boot-maven-plugin.version>2.4.2</spring-boot-maven-plugin.version>
+		<spring-boot-maven-plugin.version>2.7.12</spring-boot-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -121,8 +121,8 @@
 
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>${springdoc-openapi-ui.version}</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc-openapi-starter-webmvc-ui.version}</version>
 		</dependency>
 
 		<dependency>
@@ -136,9 +136,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>ma.glasnost.orika</groupId>
-			<artifactId>orika-core</artifactId>
-			<version>${orika-core.version}</version>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
 		</dependency>
 
 		<!-- TWA -->
@@ -186,6 +186,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<parameters>true</parameters>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

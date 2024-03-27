@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ClientHttpConnector;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -49,15 +49,15 @@ public class ProviderAlphaConnector {
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
 
         WebClient client = WebClient.builder().defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .clientConnector(connector).build();
+                .clientConnector(connector).baseUrl(configuration.getHost()).build();
 
         return client.get()
-                .uri(uriBuilder -> uriBuilder.path(configuration.getHost().concat(SEARCH))
+                .uri(uriBuilder -> uriBuilder.path(SEARCH)
                         .queryParam("adults", request.getAdults()).queryParam("children", request.getChildren())
                         .queryParam("infants", request.getInfants()).queryParam("amount", request.getAmount())
                         .queryParam("departure", request.getDeparture()).queryParam("from", request.getFrom())
                         .queryParam("to", request.getTo()).build())
-                .retrieve().onStatus(HttpStatus::isError, clientResponse -> {
+                .retrieve().onStatus(HttpStatusCode::isError, clientResponse -> {
                     LOGGER.error("Error while calling endpoint {} with status code {}", SEARCH,
                             clientResponse.statusCode());
                     throw new TWAException("Error while calling catalog endpoint");

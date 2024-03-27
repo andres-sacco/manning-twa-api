@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static org.mockito.ArgumentMatchers.anyString;
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
-public class DocumentationControllerTest {
+class DocumentationControllerTest {
 
     private DocumentationController controller;
     private HttpServletResponse response;
@@ -25,12 +25,12 @@ public class DocumentationControllerTest {
     }
 
     @Test
-    public void should_redirect_documentation_without_error() {
+    void should_redirect_documentation_without_error() {
         controller.redirectToDocumentation(response);
     }
 
     @Test
-    public void should_redirect_documentation_error() throws IOException {
+    void should_redirect_documentation_error() throws IOException {
         doThrow(new IOException()).when(response).sendRedirect(anyString());
         controller.redirectToDocumentation(response);
     }

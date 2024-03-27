@@ -1,6 +1,6 @@
-INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('1', 1, 'General', '10', '2023-01-01 00:00:00', '2023-01-01 00:00:00');
-INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('2', 1, 'Special Carrier', '5', '2023-01-01 00:00:00', '2022-05-01 00:00:00');
-INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('3', 1, 'Ciber Week', '1', '2022-01-19 18:00:00', '2025-08-26 00:00:00');
+INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('1', 1, 'General', '10', '2024-01-01 00:00:00', '2027-01-01 00:00:00');
+INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('2', 1, 'Special Carrier', '5', '2024-01-01 00:00:00', '2024-05-01 00:00:00');
+INSERT INTO `commercial_policy` (`id`, `active`, `name`, `priority`, `start_date`, `expire_date`) VALUES ('3', 1, 'Ciber Week', '1', '2024-01-19 18:00:00', '2025-08-26 00:00:00');
 
 
 INSERT INTO `commercial_policy_carrier` (`id`, `carrier`, `percentage`, `commercial_policy_id`) VALUES ('1', 'AR', '5', '1');

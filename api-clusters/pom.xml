@@ -35,7 +35,7 @@
 		<!-- General -->
 		<chaos-monkey-spring-boot.version>2.7.2</chaos-monkey-spring-boot.version>
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
-		<springdoc-openapi-starter-webmvc-ui.version>2.1.0</springdoc-openapi-starter-webmvc-ui.version>
+		<springdoc-openapi-starter-webmvc-ui.version>2.7.0</springdoc-openapi-starter-webmvc-ui.version>
 		<guava.version>32.0.0-jre</guava.version>
 
 		<!-- TWA -->
